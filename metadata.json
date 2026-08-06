@@ -1,0 +1,6 @@
+{
+  "name": "California Mortgage Lender",
+  "description": "Modern California mortgage lender platform with instant rate quotes, integrated loan calculator, streamlined application form, and custom CA loan guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
