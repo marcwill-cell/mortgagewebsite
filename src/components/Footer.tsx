@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPreQual
               <div className="w-9 h-9 rounded-lg bg-teal-700 flex items-center justify-center text-white font-bold shadow-md">
                 <Compass className="w-5 h-5" />
               </div>
-              <span className="text-lg font-extrabold text-white tracking-tight">GOLDEN STATE LENDERS</span>
+              <span className="text-lg font-extrabold text-white tracking-tight">GOLDEN STATE HOME LOAN</span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
               Direct California mortgage lender providing competitive rates, fast 14-day approvals, and zero-junk-fee home purchase and refinance options across all 58 California counties.
@@ -78,15 +78,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPreQual
         {/* NMLS & Legal Disclosures */}
         <div className="pt-8 border-t border-slate-800 text-[11px] text-slate-500 space-y-3 leading-relaxed">
           <p>
-            <strong>Licensing & Legal Compliance:</strong> Golden State Lenders LLC. NMLS Unique Identifier #1387796. Licensed by the California Department of Financial Protection and Innovation under the California Residential Mortgage Lending Act. Equal Housing Lender. All rights reserved.
+            <strong>Licensing & Legal Compliance:</strong> Golden State Home Loan LLC. NMLS Unique Identifier #1387796. Licensed by the California Department of Financial Protection and Innovation under the California Residential Mortgage Lending Act. Equal Housing Lender. All rights reserved.
           </p>
           <p>
             <strong>Rate & APR Disclosures:</strong> Interest rates and APRs quoted are for informational purposes only, subject to market volatility, credit approval, underwriting guidelines, and property valuation. Advertised 30-Year Fixed rates assume a conforming loan amount of $650,000, 740 credit score, and 20% down payment unless stated otherwise.
           </p>
           <div className="flex flex-wrap items-center justify-between gap-4 text-slate-400 pt-3 border-t border-slate-800">
-            <span>© {new Date().getFullYear()} Golden State Lenders. All Rights Reserved.</span>
+            <span>© {new Date().getFullYear()} Golden State Home Loan. All Rights Reserved.</span>
             <div className="flex gap-4 text-[11px]">
-              <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy Policy: Golden State Lenders respects consumer data privacy. We do not sell personal financial information.'); }} className="hover:underline">Privacy Policy</a>
+              <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy Policy: Golden State Home Loan respects consumer data privacy. We do not sell personal financial information.'); }} className="hover:underline">Privacy Policy</a>
               <a href="#terms" onClick={(e) => { e.preventDefault(); alert('Terms of Use: All mortgage calculations provided are estimates for planning purposes.'); }} className="hover:underline">Terms of Use</a>
               <a href="#nmls" onClick={(e) => { e.preventDefault(); window.open('https://www.nmlsconsumeraccess.org', '_blank'); }} className="hover:underline flex items-center gap-1">NMLS Consumer Access <ExternalLink className="w-3 h-3" /></a>
             </div>

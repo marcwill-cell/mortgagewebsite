@@ -19,7 +19,7 @@ export const SeoFaqSection: React.FC = () => {
     },
     {
       q: "Are there zero lender fee options available in California?",
-      a: "Yes! Golden State Lenders offers transparent zero-junk-fee financing. On qualifying purchase and refinance loans, we waive standard processing and underwriting lender fees, keeping your total out-of-pocket closing costs as low as possible."
+      a: "Yes! Golden State Home Loan offers transparent zero-junk-fee financing. On qualifying purchase and refinance loans, we waive standard processing and underwriting lender fees, keeping your total out-of-pocket closing costs as low as possible."
     },
     {
       q: "How long does a California mortgage loan approval take?",
@@ -81,7 +81,7 @@ export const SeoFaqSection: React.FC = () => {
         <div className="mt-12 p-6 bg-white border border-slate-200 rounded-2xl space-y-3 text-xs text-slate-600 leading-relaxed shadow-sm">
           <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
             <FileText className="w-4 h-4 text-teal-700" />
-            <span>Why Choose Golden State Lenders as Your California Direct Mortgage Broker & Lender?</span>
+            <span>Why Choose Golden State Home Loan as Your California Direct Mortgage Broker & Lender?</span>
           </h3>
           <p>
             California real estate demands speed, competitive pricing, and deep local market expertise. Whether you are buying a primary home in Los Angeles, a luxury condo in Orange County, a tech professional property in Silicon Valley or San Francisco, or an investment home in Sacramento or San Diego, our team provides direct wholesale rates, transparent loan calculations, and personalized guidance across every county.

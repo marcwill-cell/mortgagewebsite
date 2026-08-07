@@ -122,7 +122,7 @@ export const TESTIMONIALS: Testimonial[] = [
     type: 'Jumbo Home Purchase ($1.35M)',
     rating: 5,
     date: '2 weeks ago',
-    quote: 'Navigating the Orange County market was intense, but Golden State Lenders closed our Jumbo purchase in just 14 calendar days! Their rate was nearly 0.5% lower than our big bank quote with zero junk fees.',
+    quote: 'Navigating the Orange County market was intense, but Golden State Home Loan closed our Jumbo purchase in just 14 calendar days! Their rate was nearly 0.5% lower than our big bank quote with zero junk fees.',
     savingsOrDetail: 'Saved $410/mo vs local bank quote'
   },
   {

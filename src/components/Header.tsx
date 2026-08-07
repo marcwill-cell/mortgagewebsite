@@ -42,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
           </div>
           <div>
             <div className="text-xl font-black tracking-tight text-slate-900 flex items-center gap-1.5 font-sans">
-              GOLDEN STATE <span className="text-teal-700 font-bold text-sm bg-teal-50 px-2 py-0.5 rounded border border-teal-200">LENDERS</span>
+              GOLDEN STATE <span className="text-teal-700 font-bold text-sm bg-teal-50 px-2 py-0.5 rounded border border-teal-200">HOME LOAN</span>
             </div>
             <p className="text-[10px] text-slate-500 tracking-wider uppercase font-semibold">California Direct Mortgage Specialist</p>
           </div>
@@ -59,13 +59,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
           </button>
           <button 
             onClick={() => handleNavClick('heloc')}
-            className="hover:text-teal-700 transition-colors py-2 flex items-center gap-1 font-bold text-teal-900 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200"
+            className="hover:text-teal-700 transition-colors h-9 px-3 min-w-[180px] flex items-center justify-center gap-1 font-bold text-xs text-teal-900 bg-teal-50 rounded-lg border border-teal-200 whitespace-nowrap"
           >
             <span>HELOC (600 FICO)</span>
           </button>
           <button 
             onClick={() => handleNavClick('reverse-mortgage')}
-            className="hover:text-emerald-700 transition-colors py-2 flex items-center gap-1 font-bold text-emerald-900 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200"
+            className="hover:text-emerald-700 transition-colors h-9 px-3 min-w-[180px] flex items-center justify-center gap-1 font-bold text-xs text-emerald-900 bg-emerald-50 rounded-lg border border-emerald-200 whitespace-nowrap"
           >
             <span>Reverse Mortgage (Age 55+)</span>
           </button>
