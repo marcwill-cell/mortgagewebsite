@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Award, ShieldCheck, CheckCircle2, ArrowRight, UserCheck, Sparkles, Building2 } from 'lucide-react';
-import marcPhoto from '../assets/images/marc_williamson_final_1786123870939.jpg';
+import marcPhoto from '../assets/images/marc_williamson_notie_1786126926715.jpg';
 
 interface AboutMarcProps {
   onOpenPreQual: () => void;
@@ -72,7 +72,7 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
               </div>
 
               <p className="text-sm text-slate-600 leading-relaxed">
-                With extensive experience navigating the California real estate market, Marc Williamson specializes in delivering tailored mortgage strategies for homebuyers, real estate investors, and homeowners looking to refinance. From high-cost conforming loans in LA, Bay Area, and Orange County to VA, FHA, Jumbo, and DSCR investor products, Marc guarantees zero junk fees, total transparency, and swift 14-day loan turnarounds.
+                With extensive experience navigating the California real estate market, Marc Williamson specializes in delivering tailored mortgage strategies for homebuyers, real estate investors, and homeowners looking to refinance. I specialize in 3-5 day HELOC Closings down to 600 FICOs! From conforming loans in LA, Bay Area, and Orange County to VA, FHA, Jumbo, and DSCR investor products, with no junk fees, total transparency, and swift loan turnarounds. I work with the top 10 lenders in the nation for Reverse Mortgages as well!
               </p>
 
               {/* Contact Callout Card */}
