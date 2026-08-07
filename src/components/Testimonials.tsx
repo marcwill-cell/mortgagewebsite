@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, Quote, CheckCircle2, ThumbsUp } from 'lucide-react';
-import marcPhoto from '../assets/images/marc_williamson_clean_1786056212903.jpg';
+import marcPhoto from '../assets/images/marc_williamson_final_1786123870939.jpg';
 
 export const Testimonials: React.FC = () => {
   return (
