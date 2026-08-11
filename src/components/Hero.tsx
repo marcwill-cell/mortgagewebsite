@@ -2,7 +2,7 @@ import React from 'react';
 import { ShieldCheck, TrendingDown, Clock, CheckCircle2, ArrowRight, Calculator, Star, Sparkles, UserCheck, Phone, Mail } from 'lucide-react';
 import { CURRENT_RATES } from '../data/loanPrograms';
 import heroHomeImg from '../assets/images/hero_california_home_1786052838025.jpg';
-import marcPhoto from '../../assets/photo.png';
+import { MARC_PHOTO_DATA_URI as marcPhoto } from '../data/marcPhotoDataUri';
 
 interface HeroProps {
   onOpenPreQual: () => void;

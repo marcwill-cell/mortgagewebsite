@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Award, ShieldCheck, CheckCircle2, ArrowRight, UserCheck, Sparkles, Building2 } from 'lucide-react';
-import marcPhoto from '../../assets/photo.png';
+import { MARC_PHOTO_DATA_URI as marcPhoto } from '../data/marcPhotoDataUri';
 
 interface AboutMarcProps {
   onOpenPreQual: () => void;
