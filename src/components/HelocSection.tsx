@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CreditCard, CheckCircle2, ShieldCheck, DollarSign, Calculator, ArrowRight, Phone, Mail, Sparkles, Percent, ShieldAlert } from 'lucide-react';
+import { CreditCard, CheckCircle2, ShieldCheck, DollarSign, Calculator, ArrowRight, Phone, Mail, Sparkles, Percent, ShieldAlert, Clock } from 'lucide-react';
 
 interface HelocSectionProps {
   onOpenPreQual: () => void;
@@ -44,40 +44,57 @@ export const HelocSection: React.FC<HelocSectionProps> = ({ onOpenPreQual }) => 
           <p className="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
             Tap into your home's equity without giving up your low 1st mortgage interest rate! Our specialized California HELOC programs offer credit score flexibility down to a 600 FICO score.
           </p>
+
+          {/* Prominent No Appraisal 3-5 Day Closing Banner */}
+          <div className="mt-4 inline-flex items-center gap-2 bg-gradient-to-r from-teal-500/20 via-emerald-500/20 to-teal-500/20 border border-teal-400/40 text-teal-200 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-lg">
+            <Clock className="w-4 h-4 text-teal-300 shrink-0" />
+            <span>No appraisal HELOCs with speedy closings of 3-5 business days</span>
+          </div>
         </div>
 
         {/* Feature Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <div className="bg-slate-800/80 border border-teal-500/30 rounded-2xl p-6 shadow-xl relative hover:border-teal-400 transition-colors">
             <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-300 border border-teal-500/30 flex items-center justify-center mb-4">
-              <Percent className="w-5 h-5" />
+              <Clock className="w-5 h-5 text-teal-300" />
+            </div>
+            <div className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Speedy Turnaround</div>
+            <h3 className="text-lg font-bold text-white mb-2">3-5 Day Closings</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              No appraisal HELOCs with speedy closings of 3-5 business days so you get fast access to your cash equity without appraisal delays.
+            </p>
+          </div>
+
+          <div className="bg-slate-800/80 border border-teal-500/30 rounded-2xl p-6 shadow-xl relative hover:border-teal-400 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-300 border border-teal-500/30 flex items-center justify-center mb-4">
+              <Percent className="w-5 h-5 text-teal-300" />
             </div>
             <div className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Flexible Credit Guidelines</div>
-            <h3 className="text-lg font-bold text-white mb-2">600 FICO Minimum Score</h3>
+            <h3 className="text-lg font-bold text-white mb-2">600 FICO Minimum</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              While major banks demand 700+ credit scores for equity lines, our California standalone HELOC program accommodates credit scores down to 600 FICO with flexible underwriting.
+              While major banks demand 700+ credit scores for equity lines, our California standalone HELOC program accommodates credit scores down to 600 FICO.
             </p>
           </div>
 
           <div className="bg-slate-800/80 border border-teal-500/30 rounded-2xl p-6 shadow-xl relative hover:border-teal-400 transition-colors">
             <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-300 border border-teal-500/30 flex items-center justify-center mb-4">
-              <ShieldCheck className="w-5 h-5" />
+              <ShieldCheck className="w-5 h-5 text-teal-300" />
             </div>
             <div className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">Protect Your Low Rate</div>
-            <h3 className="text-lg font-bold text-white mb-2">Keep Your 1st Mortgage Intact</h3>
+            <h3 className="text-lg font-bold text-white mb-2">Keep 1st Rate Intact</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Don't replace your 2.75% or 3.5% first mortgage with a high cash-out refi rate. A standalone HELOC sits as a 2nd lien, leaving your existing low rate untouched.
+              Don't replace your 2.75% or 3.5% first mortgage with a high cash-out refi rate. A standalone HELOC sits as a 2nd lien, leaving your low rate untouched.
             </p>
           </div>
 
           <div className="bg-slate-800/80 border border-teal-500/30 rounded-2xl p-6 shadow-xl relative hover:border-teal-400 transition-colors">
             <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-300 border border-teal-500/30 flex items-center justify-center mb-4">
-              <DollarSign className="w-5 h-5" />
+              <DollarSign className="w-5 h-5 text-teal-300" />
             </div>
             <div className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-1">High Equity Leverage</div>
             <h3 className="text-lg font-bold text-white mb-2">Up to 85% - 90% CLTV</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Access up to $500,000+ in cash equity. Draw funds as needed for home remodels, high-interest debt payoff, investment property purchases, or emergency reserves.
+              Access up to $500,000+ in cash equity. Draw funds as needed for home remodels, debt payoff, investment property purchases, or emergency reserves.
             </p>
           </div>
         </div>
