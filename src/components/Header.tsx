@@ -106,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
         {/* Actions */}
         <div className="hidden lg:flex items-center gap-5">
           <a 
-            href="tel:2132943747" 
+            href="tel:2099146037" 
             className="flex items-center gap-2.5 text-slate-700 hover:text-teal-700 transition-colors group"
           >
             <div className="w-9 h-9 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-700 group-hover:bg-teal-700 group-hover:text-white transition-colors shrink-0">
@@ -114,7 +114,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
             </div>
             <div className="text-left leading-tight">
               <div className="text-[10px] uppercase text-teal-800 font-extrabold tracking-wider">Speak to a Calif Advisor Marc Williamson</div>
-              <div className="text-xs font-extrabold text-slate-900 tracking-tight">213-294-3747 Direct</div>
+              <div className="text-xs font-extrabold text-slate-900 tracking-tight">209-914-6037 Direct</div>
               <div className="text-[10px] text-slate-500 font-medium">marcwill@goldenstatehomeloan.com</div>
             </div>
           </a>
@@ -216,7 +216,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
 
           <div className="pt-2 border-t border-slate-100 space-y-1 px-2 text-xs text-slate-700 font-medium">
             <div className="font-extrabold text-teal-800">Speak to a Calif Advisor Marc Williamson</div>
-            <div>Direct Phone: <a href="tel:2132943747" className="text-teal-700 font-bold underline">213-294-3747 Direct</a></div>
+            <div>Direct Phone: <a href="tel:2099146037" className="text-teal-700 font-bold underline">209-914-6037 Direct</a></div>
             <div>Email: <a href="mailto:marcwill@goldenstatehomeloan.com" className="text-teal-700 font-bold underline">marcwill@goldenstatehomeloan.com</a></div>
             <div className="text-[10px] text-slate-500 pt-1">NMLS #1387796 | Powered by Omni-Fund, Inc NMLS# 4869 DRE License# 0143-0833</div>
           </div>

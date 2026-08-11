@@ -89,7 +89,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledScenario }) =
             name: "Marc Williamson",
             title: "Senior CA Mortgage Advisor",
             nmls: "NMLS #1387796",
-            directPhone: "213-294-3747 Direct",
+            directPhone: "209-914-6037 Direct",
             email: "marcwill@goldenstatehomeloan.com"
           }
         }

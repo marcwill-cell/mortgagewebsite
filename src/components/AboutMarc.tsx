@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Award, ShieldCheck, CheckCircle2, ArrowRight, UserCheck, Sparkles, Building2 } from 'lucide-react';
-import marcPhoto from '../assets/images/marc_williamson_notie_1786126926715.jpg';
+import marcPhoto from '../assets/images/marc_github_1675.jpg';
 
 interface AboutMarcProps {
   onOpenPreQual: () => void;
@@ -84,7 +84,7 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
 
                 <div className="grid sm:grid-cols-2 gap-3 pt-1">
                   <a
-                    href="tel:2132943747"
+                    href="tel:2099146037"
                     className="flex items-center gap-3 p-3 bg-teal-950 hover:bg-teal-800 border border-teal-700/80 rounded-lg transition-colors group"
                   >
                     <div className="w-8 h-8 rounded-full bg-teal-800 flex items-center justify-center text-teal-200 group-hover:bg-white group-hover:text-teal-900 transition-colors">
@@ -92,7 +92,7 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
                     </div>
                     <div>
                       <div className="text-[10px] text-teal-300 uppercase font-semibold">Direct Phone</div>
-                      <div className="text-xs font-extrabold text-white">213-294-3747 Direct</div>
+                      <div className="text-xs font-extrabold text-white">209-914-6037 Direct</div>
                     </div>
                   </a>
 
@@ -141,11 +141,11 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <a
-                  href="tel:2132943747"
+                  href="tel:2099146037"
                   className="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-extrabold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4 text-teal-700" />
-                  <span>Call 213-294-3747</span>
+                  <span>Call 209-914-6037</span>
                 </a>
               </div>
             </div>

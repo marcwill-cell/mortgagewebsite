@@ -58,8 +58,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPreQual
             <div className="text-xs font-bold uppercase tracking-wider text-white">Speak to a Calif Advisor</div>
             <div className="space-y-2 text-xs text-slate-300">
               <div className="font-bold text-teal-300">Marc Williamson</div>
-              <a href="tel:2132943747" className="flex items-center gap-2 hover:text-teal-400 transition-colors font-semibold">
-                <Phone className="w-3.5 h-3.5 text-teal-400" /> 213-294-3747 Direct
+              <a href="tel:2099146037" className="flex items-center gap-2 hover:text-teal-400 transition-colors font-semibold">
+                <Phone className="w-3.5 h-3.5 text-teal-400" /> 209-914-6037 Direct
               </a>
               <a href="mailto:marcwill@goldenstatehomeloan.com" className="flex items-center gap-2 hover:text-teal-400 transition-colors">
                 <Mail className="w-3.5 h-3.5 text-teal-400" /> marcwill@goldenstatehomeloan.com

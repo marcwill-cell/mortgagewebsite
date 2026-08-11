@@ -222,11 +222,11 @@ export const HelocSection: React.FC<HelocSectionProps> = ({ onOpenPreQual }) => 
 
           <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
             <a
-              href="tel:2132943747"
+              href="tel:2099146037"
               className="bg-teal-700 hover:bg-teal-600 text-white font-extrabold text-xs px-5 py-3 rounded-xl transition-all flex items-center gap-2 shadow-md"
             >
               <Phone className="w-4 h-4 text-teal-200" />
-              <span>213-294-3747 Direct</span>
+              <span>209-914-6037 Direct</span>
             </a>
             <a
               href="mailto:marcwill@goldenstatehomeloan.com"

@@ -2,7 +2,7 @@ import React from 'react';
 import { ShieldCheck, TrendingDown, Clock, CheckCircle2, ArrowRight, Calculator, Star, Sparkles, UserCheck, Phone, Mail } from 'lucide-react';
 import { CURRENT_RATES } from '../data/loanPrograms';
 import heroHomeImg from '../assets/images/hero_california_home_1786052838025.jpg';
-import marcPhoto from '../assets/images/marc_williamson_notie_1786126926715.jpg';
+import marcPhoto from '../assets/images/marc_github_1675.jpg';
 
 interface HeroProps {
   onOpenPreQual: () => void;
@@ -150,9 +150,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPreQual, onNavigateCalculator 
                   <span className="text-[10px] bg-teal-800 text-teal-100 px-2 py-0.5 rounded font-mono shrink-0">NMLS #1387796</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-200 font-medium">
-                  <a href="tel:2132943747" className="flex items-center gap-1.5 hover:text-teal-300 transition-colors bg-teal-950/60 p-2 rounded border border-teal-700/60">
+                  <a href="tel:2099146037" className="flex items-center gap-1.5 hover:text-teal-300 transition-colors bg-teal-950/60 p-2 rounded border border-teal-700/60">
                     <Phone className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                    <span className="font-bold text-white">213-294-3747 Direct</span>
+                    <span className="font-bold text-white">209-914-6037 Direct</span>
                   </a>
                   <a href="mailto:marcwill@goldenstatehomeloan.com" className="flex items-center gap-1.5 hover:text-teal-300 transition-colors bg-teal-950/60 p-2 rounded border border-teal-700/60 truncate">
                     <Mail className="w-3.5 h-3.5 text-teal-400 shrink-0" />
