@@ -59,9 +59,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
           </button>
           <button 
             onClick={() => handleNavClick('heloc')}
-            className="hover:text-teal-700 transition-colors h-9 px-3 min-w-[180px] flex items-center justify-center gap-1 font-bold text-xs text-teal-900 bg-teal-50 rounded-lg border border-teal-200 whitespace-nowrap"
+            className="hover:bg-teal-100 transition-all py-1 px-3 min-w-[185px] flex flex-col items-center justify-center bg-teal-50 rounded-lg border border-teal-200 whitespace-nowrap shadow-sm"
           >
-            <span>HELOC (600 FICO)</span>
+            <span className="text-[10px] font-extrabold text-teal-800 tracking-tight leading-tight">*3-5 day HELOC closings</span>
+            <span className="font-bold text-xs text-teal-900 leading-tight">HELOC (600 FICO)</span>
           </button>
           <button 
             onClick={() => handleNavClick('reverse-mortgage')}
@@ -162,8 +163,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
             onClick={() => handleNavClick('heloc')}
             className="w-full text-left px-4 py-3 rounded-lg bg-teal-900 text-white font-extrabold flex items-center justify-between"
           >
-            <span>HELOC & 2nd Mortgages (Down to 600 FICO)</span>
-            <ChevronRight className="w-4 h-4 text-teal-300" />
+            <div className="flex flex-col">
+              <span className="text-[11px] text-teal-300 font-extrabold tracking-tight">*3-5 day HELOC closings</span>
+              <span className="text-sm">HELOC & 2nd Mortgages (Down to 600 FICO)</span>
+            </div>
+            <ChevronRight className="w-4 h-4 text-teal-300 shrink-0" />
           </button>
 
           <button
