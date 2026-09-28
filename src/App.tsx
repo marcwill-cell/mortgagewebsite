@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { ProcessingPackages } from './components/ProcessingPackages';
+import { HowItWorks } from './components/HowItWorks';
+import { LoanTypesProcessed } from './components/LoanTypesProcessed';
+import { StateIntel } from './components/StateIntel';
 import { AboutMarc } from './components/AboutMarc';
-import { HelocSection } from './components/HelocSection';
-import { ReverseMortgage } from './components/ReverseMortgage';
 import { LoanCalculator } from './components/LoanCalculator';
 import { ContactForm } from './components/ContactForm';
-import { LoanPrograms } from './components/LoanPrograms';
-import { CountyLimits } from './components/CountyLimits';
-import { AiMortgageAdvisor } from './components/AiMortgageAdvisor';
 import { Testimonials } from './components/Testimonials';
 import { SeoFaqSection } from './components/SeoFaqSection';
 import { Footer } from './components/Footer';
 import { PreQualModal } from './components/PreQualModal';
-import { LoanProgram } from './types';
+import { ProcessingPackage } from './data/processingData';
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -31,20 +30,20 @@ export default function App() {
     handleNavigateSection('contact');
   };
 
-  const handleSelectProgram = (program: LoanProgram) => {
+  const handleSelectPackage = (pkg: ProcessingPackage) => {
     setPrefilledScenario({
       price: 850000,
-      down: program.minDownPercent > 0 ? Math.round(850000 * (program.minDownPercent / 100)) : 0,
-      rate: program.id === 'va' ? 5.75 : program.id === 'fha' ? 5.875 : 6.375,
+      down: 170000,
+      rate: 6.375,
       term: 30,
     });
     handleNavigateSection('contact');
   };
 
-  const handleSelectCounty = (countyName: string) => {
+  const handleSelectProgram = (programId: string) => {
     setPrefilledScenario({
-      price: countyName === 'Los Angeles' || countyName === 'Orange' || countyName === 'San Francisco' ? 1100000 : 750000,
-      down: 150000,
+      price: 850000,
+      down: 170000,
       rate: 6.375,
       term: 30,
     });
@@ -52,64 +51,75 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950">
-      {/* Header */}
+    <div className="min-h-screen art-deco-wallpaper text-slate-900 font-sans selection:bg-[#D4AF37] selection:text-slate-950">
+      {/* Art Deco Header & Top Bar Contract */}
       <Header
         onOpenPreQual={() => setModalOpen(true)}
         onNavigateSection={handleNavigateSection}
       />
 
-      {/* Hero Section */}
+      {/* Hero Section with Marc Williamson Card & Art Deco Backdrop */}
       <div id="hero">
         <Hero
           onOpenPreQual={() => setModalOpen(true)}
           onNavigateCalculator={() => handleNavigateSection('calculator')}
+          onNavigatePackages={() => handleNavigateSection('packages')}
         />
       </div>
 
       {/* Main Content Sections */}
       <main>
-        {/* Dedicated About Marc Williamson Section & Tab */}
-        <AboutMarc onOpenPreQual={() => setModalOpen(true)} />
-
-        {/* Dedicated HELOC Section (Down to 600 FICO) */}
-        <HelocSection onOpenPreQual={() => setModalOpen(true)} />
-
-        {/* Dedicated Reverse Mortgages Section (Age 55+) */}
-        <ReverseMortgage onOpenPreQual={() => setModalOpen(true)} />
-
-        {/* Integrated Loan Calculator Section */}
-        <LoanCalculator onTransferToForm={handleTransferToForm} />
-
-        {/* Streamlined Pre-Qualification & Contact Form Section */}
-        <ContactForm prefilledScenario={prefilledScenario} />
-
-        {/* California Loan Programs */}
-        <LoanPrograms onSelectProgram={handleSelectProgram} />
-
-        {/* California County Conforming Limits Lookup */}
-        <CountyLimits onSelectCounty={handleSelectCounty} />
-
-        {/* AI Mortgage Advisor */}
-        <AiMortgageAdvisor
-          onOpenPreQual={() => setModalOpen(true)}
-          onOpenCalculator={() => handleNavigateSection('calculator')}
+        {/* Core Golden State 3rd Party Loan Processing Packages ($0 Upfront, Paid at Closing) */}
+        <ProcessingPackages
+          onSelectPackage={handleSelectPackage}
+          onOpenConsultation={() => setModalOpen(true)}
         />
 
-        {/* Client Spotlight Review */}
+        {/* Seamless LOS Workflow: Arive, LendingPad, Encompass & 5-Stage Lifecycle */}
+        <HowItWorks
+          onOpenConsultation={() => setModalOpen(true)}
+        />
+
+        {/* Loan Programs Processed: Conventional, Non-QM, DSCR, Commercial, Jumbo */}
+        <LoanTypesProcessed
+          onSelectProgram={handleSelectProgram}
+          onOpenConsultation={() => setModalOpen(true)}
+        />
+
+        {/* State-by-State Regulatory & Licensing Directory (1 Touch Processing LLC) */}
+        <StateIntel
+          onOpenConsultation={() => setModalOpen(true)}
+        />
+
+        {/* Dedicated About Marc Williamson Section (Photo, Bio, NMLS #1387796) */}
+        <AboutMarc
+          onOpenPreQual={() => setModalOpen(true)}
+        />
+
+        {/* Interactive Broker Overhead ROI & Loan Calculator */}
+        <LoanCalculator
+          onTransferToForm={handleTransferToForm}
+        />
+
+        {/* Client & Broker Reviews / Testimonials for Marc Williamson */}
         <Testimonials />
 
-        {/* SEO FAQs & Lending Guide */}
+        {/* File Intake & Broker Partner Onboarding Desk */}
+        <ContactForm
+          prefilledScenario={prefilledScenario}
+        />
+
+        {/* SEO & Compliance FAQs */}
         <SeoFaqSection />
       </main>
 
-      {/* Footer */}
+      {/* Gilded Art Deco Footer */}
       <Footer
         onNavigateSection={handleNavigateSection}
         onOpenPreQual={() => setModalOpen(true)}
       />
 
-      {/* Rate Quote Modal */}
+      {/* File Intake / Consultation Modal */}
       <PreQualModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}

@@ -1,175 +1,239 @@
 import React from 'react';
-import { ShieldCheck, TrendingDown, Clock, CheckCircle2, ArrowRight, Calculator, Star, Sparkles, UserCheck, Phone, Mail } from 'lucide-react';
-import { CURRENT_RATES } from '../data/loanPrograms';
-import heroHomeImg from '../assets/images/hero_california_home_1786052838025.jpg';
-import { MARC_PHOTO_DATA_URI as marcPhoto } from '../data/marcPhotoDataUri';
+import { MARC_PHOTO_DATA_URI } from '../data/marcPhotoDataUri';
+import { Shield, Phone, Mail, ArrowRight, Zap, CheckCircle2, Award, Clock, FileSpreadsheet } from 'lucide-react';
+import heroBgImage from '../assets/images/art_deco_hero_bg_1790618639084.jpg';
 
 interface HeroProps {
   onOpenPreQual: () => void;
   onNavigateCalculator: () => void;
+  onNavigatePackages?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenPreQual, onNavigateCalculator }) => {
+export const Hero: React.FC<HeroProps> = ({ 
+  onOpenPreQual, 
+  onNavigateCalculator,
+  onNavigatePackages 
+}) => {
   return (
-    <section className="relative bg-slate-900 text-white overflow-hidden pt-10 pb-16 lg:pb-24">
-      {/* Background with radial teal glow & subtle luxury home image overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-900/60 via-slate-900 to-slate-950 z-10" />
-        <img
-          src={heroHomeImg}
-          alt="Modern California Home"
-          className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity scale-105"
-          referrerPolicy="no-referrer"
-        />
-      </div>
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-16 lg:py-24 border-b border-[#D4AF37]/35">
+      {/* Decorative Art Deco Hairlines */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Highlight Badge */}
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 bg-teal-950/80 border border-teal-500/30 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-semibold text-teal-300 shadow-md">
-            <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-            <span>Direct Wholesale California Rates • 14-Day Fast Close</span>
-          </div>
-          <div className="hidden sm:inline-flex items-center gap-1.5 text-xs text-slate-300 font-medium">
-            <div className="flex text-amber-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <span>Outstanding 5 star ratings from home buyers and home owners for over 25 years</span>
-          </div>
-        </div>
-
-        {/* Hero Grid */}
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          {/* Main Headline Column */}
-          <div className="lg:col-span-7 space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-              Your Future Starts with the <br />
-              <span className="text-teal-400">
-                Perfect Home Loan.
-              </span>
-            </h1>
-
-            <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
-              Competitive California mortgage rates with the personalized service of a local expert across all 58 California counties with zero junk fees and fast approvals.
-            </p>
-
-            {/* Value Bullets */}
-            <div className="grid sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-200">
-              <div className="flex items-center gap-2.5 bg-slate-800/80 border border-slate-700/60 p-3 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span><strong>No Lender Fees</strong> on standard purchase loans</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Column: Value Proposition */}
+          <div className="lg:col-span-7 space-y-6 text-left">
+            
+            {/* Art Deco Subtitle Bar */}
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-[#8C650A] font-bold border-b border-[#D4AF37]/50 pb-1">
+                <span>◈</span>
+                <span>GOLDEN STATE 3RD PARTY LOAN PROCESSING</span>
+                <span>◈</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-slate-800/80 border border-slate-700/60 p-3 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span><strong>Instant Pre-Qual</strong> in 3 minutes or less</span>
-              </div>
-              <div className="flex items-center gap-2.5 bg-slate-800/80 border border-slate-700/60 p-3 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span><strong>High-Cost CA Limits</strong> up to $1,149,825</span>
-              </div>
-              <div className="flex items-center gap-2.5 bg-slate-800/80 border border-slate-700/60 p-3 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span><strong>Self-Employed & DSCR</strong> No tax return options</span>
+              <div className="text-[11px] text-slate-700 font-medium tracking-wide">
+                Powered by 1 Touch Processing Arizona NMLS # 2337071
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            {/* Stately Art Deco Headline */}
+            <div className="space-y-2">
+              <h1 className="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0A0D14] leading-[1.15]">
+                CLOSE MORE LOANS. <br />
+                <span className="gold-gradient-text">ZERO OVERHEAD.</span>
+              </h1>
+              <p className="text-base sm:text-lg text-slate-800 font-normal max-w-2xl leading-relaxed">
+                The premier third-party contract processing engine for mortgage brokers, loan officers, and wholesale lenders. Golden State 3rd Party Loan Processing integrates directly into your LOS—<strong className="text-[#8C650A] font-semibold">Arive, LendingPad, Encompass</strong>—delivering faster condition clearing, zero fixed payroll, and flawless closings.
+              </p>
+            </div>
+
+            {/* Front & Center Core Processor Commitments */}
+            <div className="relative p-5 sm:p-6 rounded-sm bg-gradient-to-br from-[#121622]/95 via-[#0D1017]/95 to-[#161C2A]/95 border-2 border-[#D4AF37]/60 shadow-2xl my-3 max-w-2xl">
+              {/* Stepped Art Deco Corners */}
+              <div className="absolute top-1.5 left-1.5 w-3 h-3 border-t-2 border-l-2 border-[#D4AF37]" />
+              <div className="absolute top-1.5 right-1.5 w-3 h-3 border-t-2 border-r-2 border-[#D4AF37]" />
+              <div className="absolute bottom-1.5 left-1.5 w-3 h-3 border-b-2 border-l-2 border-[#D4AF37]" />
+              <div className="absolute bottom-1.5 right-1.5 w-3 h-3 border-b-2 border-r-2 border-[#D4AF37]" />
+
+              <div className="flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#F5D77F] font-bold border-b border-[#D4AF37]/30 pb-2 mb-3.5">
+                <span className="text-[#D4AF37]">◈</span>
+                <span>The Processor Commitment · Direct From Marc Williamson</span>
+                <span className="text-[#D4AF37]">◈</span>
+              </div>
+
+              <ul className="space-y-3.5 text-xs sm:text-sm text-slate-100">
+                <li className="flex items-start gap-3">
+                  <div className="p-1 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
+                    <Zap className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  </div>
+                  <span className="leading-relaxed">
+                    <strong className="text-white font-semibold">I provide &ldquo;Johnny on the Spot Responses&rdquo;</strong> to your calls, texts, and emails as your Processor.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <div className="p-1 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
+                    <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  </div>
+                  <span className="leading-relaxed">
+                    <strong className="text-white font-semibold">I am paid out of Section B</strong> on your closing disclosures. <span className="text-amber-200/90 font-medium">(Not out of your commission unless you choose to)</span>
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <div className="p-1 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  </div>
+                  <span className="leading-relaxed">
+                    <strong className="text-white font-semibold">All work is here in the USA.</strong> <span className="text-slate-300">(I don&apos;t farm any of it out overseas in any way as some large processing firms have.)</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-1">
               <button
                 onClick={onOpenPreQual}
-                className="bg-teal-700 hover:bg-teal-800 text-white font-bold text-base px-8 py-4 rounded-full shadow-xl hover:shadow-teal-700/30 transition-all flex items-center justify-center gap-3 active:scale-95"
+                className="px-6 py-3.5 rounded-sm font-cinzel font-bold text-xs uppercase tracking-[0.16em] text-[#0A0D14] gold-gradient-bg hover:brightness-110 shadow-xl transition-all flex items-center gap-2 border border-[#F5D77F]/60"
               >
-                <span>Get Today's Rate Quote</span>
-                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
+                <span>Submit Loan File for Processing</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
 
               <button
                 onClick={onNavigateCalculator}
-                className="bg-slate-800/90 hover:bg-slate-700 text-white font-bold text-base px-6 py-4 rounded-full border border-slate-600 hover:border-teal-400/50 transition-all flex items-center justify-center gap-2"
+                className="px-5 py-3.5 rounded-sm font-semibold text-xs tracking-wider text-slate-200 bg-[#121622] hover:bg-[#1A2030] border border-[#D4AF37]/35 hover:border-[#D4AF37] transition-all flex items-center gap-2"
               >
-                <Calculator className="w-5 h-5 text-teal-400" />
-                <span>Calculate Monthly Payment</span>
+                <FileSpreadsheet className="w-4 h-4 text-[#D4AF37]" />
+                <span>Calculate Broker Savings</span>
               </button>
             </div>
+
+            {/* Key Value Metadata Strip */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-800 font-medium pt-3 border-t border-[#D4AF37]/30">
+              <div className="flex items-center gap-1.5 text-[#8C650A]">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span className="font-semibold">$0 Upfront Cost (Paid at Closing)</span>
+              </div>
+              <span className="text-slate-400 hidden sm:inline">·</span>
+              <div className="flex items-center gap-1.5 text-slate-800">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>100% US-Based Processors</span>
+              </div>
+              <span className="text-slate-400 hidden sm:inline">·</span>
+              <div className="flex items-center gap-1.5 text-slate-800">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>Licensed in AZ, CA, CO, FL, IL, MI, OK, PA &amp; TX</span>
+              </div>
+            </div>
+
           </div>
 
-          {/* Right Card: Live Rate Snapshot & Quick Qualifier Preview */}
-          <div className="lg:col-span-5">
-            <div className="bg-slate-800/95 border border-slate-700 rounded-2xl p-6 shadow-2xl backdrop-blur-xl relative">
-              <div className="absolute -top-3 right-6 bg-teal-500 text-slate-950 text-[11px] font-black uppercase px-3 py-1 rounded-full tracking-wider shadow-md">
-                Live Daily Market Rates
-              </div>
+          {/* Right Column: Art Deco Executive Card for Marc Williamson */}
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="relative w-full max-w-md art-deco-card p-6 sm:p-7 rounded-sm shadow-2xl">
+              
+              {/* Stepped Art Deco Corners */}
+              <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#D4AF37]/70" />
+              <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#D4AF37]/70" />
+              <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#D4AF37]/70" />
+              <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#D4AF37]/70" />
 
-              <div className="flex items-center justify-between pb-4 border-b border-slate-700">
-                <div>
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span>California Rate Monitor</span>
-                    <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-                  </h3>
-                  <p className="text-xs text-slate-400">Updated today for conforming & jumbo tiers</p>
-                </div>
-                <Clock className="w-5 h-5 text-teal-400" />
-              </div>
-
-              {/* Rates List */}
-              <div className="divide-y divide-slate-700/80 my-3">
-                {CURRENT_RATES.slice(0, 4).map((r, idx) => (
-                  <div key={idx} className="py-2.5 flex items-center justify-between text-xs">
-                    <div>
-                      <div className="font-semibold text-slate-200">{r.programName}</div>
-                      <div className="text-[11px] text-slate-400">APR: {r.apr.toFixed(3)}% • 0 Points</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm font-extrabold text-teal-400 font-mono">{r.rate.toFixed(3)}%</div>
-                      <div className="text-[10px] text-teal-300 font-semibold flex items-center justify-end gap-0.5">
-                        <TrendingDown className="w-3 h-3" />
-                        <span>{r.change}% today</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Advisor Callout box */}
-              <div className="mt-4 p-3.5 bg-teal-900/80 border border-teal-500/40 rounded-xl text-xs text-teal-200 space-y-2">
-                <div className="font-bold text-white flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
+              {/* Photo Lockup */}
+              <div className="relative mx-auto w-44 h-44 sm:w-48 sm:h-48 mb-5">
+                {/* Metallic Gold Ring */}
+                <div className="absolute inset-0 rounded-full p-1.5 gold-gradient-bg shadow-xl">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-[#0A0D14] border-2 border-[#0A0D14]">
                     <img
-                      src={marcPhoto}
-                      alt="Marc Williamson"
+                      src={MARC_PHOTO_DATA_URI}
+                      alt="Marc Williamson - Senior Director & Mortgage Advisor"
+                      className="w-full h-full object-cover object-top filter contrast-105"
                       referrerPolicy="no-referrer"
-                      className="w-9 h-9 rounded-full object-cover border border-teal-400 shrink-0"
                     />
-                    <div>
-                      <div className="text-white font-extrabold text-xs">Marc Williamson</div>
-                      <div className="text-[10px] text-teal-300">California Senior Advisor</div>
-                    </div>
                   </div>
-                  <span className="text-[10px] bg-teal-800 text-teal-100 px-2 py-0.5 rounded font-mono shrink-0">NMLS #1387796</span>
                 </div>
-                <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-200 font-medium">
-                  <a href="tel:2099146037" className="flex items-center gap-1.5 hover:text-teal-300 transition-colors bg-teal-950/60 p-2 rounded border border-teal-700/60">
-                    <Phone className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                    <span className="font-bold text-white">209-914-6037 Direct</span>
-                  </a>
-                  <a href="mailto:marcwill@goldenstatehomeloan.com" className="flex items-center gap-1.5 hover:text-teal-300 transition-colors bg-teal-950/60 p-2 rounded border border-teal-700/60 truncate">
-                    <Mail className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                    <span className="font-bold text-white truncate">marcwill@goldenstatehomeloan.com</span>
-                  </a>
+
+                {/* Status Dot */}
+                <div className="absolute bottom-1 right-2 bg-[#090C10] border border-[#D4AF37]/60 rounded-full px-2.5 py-0.5 text-[10px] font-bold text-[#F5D77F] shadow flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Available Now</span>
                 </div>
               </div>
 
+              {/* Executive Metadata */}
+              <div className="text-center space-y-1.5">
+                <div className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#D4AF37]">
+                  Main Contact & Senior Director
+                </div>
+                <h2 className="font-cinzel text-2xl font-bold tracking-tight text-white">
+                  MARC WILLIAMSON
+                </h2>
+                <div className="text-xs text-slate-300 font-medium flex items-center justify-center gap-2">
+                  <span>NMLS #1387796</span>
+                  <span className="text-[#D4AF37]">·</span>
+                  <span>20+ Yrs Lending & Processing</span>
+                </div>
+                <div className="text-[11px] text-amber-200/90 font-medium">
+                  Golden State 3rd Party Loan Processing
+                </div>
+                <div className="text-[9px] text-slate-400">
+                  Powered by 1 Touch Processing Arizona NMLS # 2337071
+                </div>
+                <p className="text-xs text-slate-400 italic pt-1 max-w-xs mx-auto">
+                  &ldquo;I personally ensure your loan files are scrubbed, submitted, and cleared to close with unprecedented speed.&rdquo;
+                </p>
+              </div>
+
+              {/* Direct Communication Channels */}
+              <div className="mt-5 space-y-2.5 pt-4 border-t border-[#D4AF37]/25 text-xs">
+                <a
+                  href="tel:2132943747"
+                  className="flex items-center justify-between p-2.5 rounded-sm bg-[#121622] hover:bg-[#1A2030] border border-slate-800 hover:border-[#D4AF37]/50 text-slate-200 transition-all group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
+                      <Phone className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-slate-400 block uppercase tracking-wider">Direct Cell / Call & Text</span>
+                      <span className="font-semibold text-white group-hover:text-[#F5D77F] transition-colors">(213) 294-3747</span>
+                    </div>
+                  </div>
+                  <span className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">Dial ➔</span>
+                </a>
+
+                <a
+                  href="mailto:marc@goldenstatehomeloan.com"
+                  className="flex items-center justify-between p-2.5 rounded-sm bg-[#121622] hover:bg-[#1A2030] border border-slate-800 hover:border-[#D4AF37]/50 text-slate-200 transition-all group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
+                      <Mail className="w-3.5 h-3.5" />
+                    </div>
+                    <div className="text-left">
+                      <span className="text-[10px] text-slate-400 block uppercase tracking-wider">Direct Email Address</span>
+                      <span className="font-semibold text-white group-hover:text-[#F5D77F] transition-colors">marc@goldenstatehomeloan.com</span>
+                    </div>
+                  </div>
+                  <span className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">Send ➔</span>
+                </a>
+              </div>
+
+              {/* Consultation Trigger */}
               <button
                 onClick={onOpenPreQual}
-                className="w-full mt-4 bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold py-3 rounded-xl border border-teal-600 transition-colors flex items-center justify-center gap-2"
+                className="mt-4 w-full py-2.5 rounded-sm bg-gradient-to-r from-[#202738] to-[#141824] hover:from-[#283248] hover:to-[#1C2232] border border-[#D4AF37]/40 text-amber-200 font-cinzel font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all"
               >
-                <span>Check Your Exact Personalized Rate</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+                <span>Book Pipeline Review With Marc</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]" />
               </button>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>

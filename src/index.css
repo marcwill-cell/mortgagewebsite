@@ -1,1 +1,68 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF8F5;
+    color: #0F131C;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: var(--font-cinzel);
+  }
+}
+
+/* White with Gold Art Deco Wallpaper Effect */
+.art-deco-wallpaper {
+  background-color: #FAF8F5;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.14) 0%, transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+    url('/src/assets/images/art_deco_wallpaper_gold.svg');
+  background-size: 100% 100%, 100% 100%, 75px 75px;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+/* Art Deco Decorative Hairlines & Metallic Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 40%, #8C650A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #DFB76C 0%, #F5D77F 35%, #D4AF37 70%, #9A7416 100%);
+}
+
+.gold-border {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  box-shadow: 0 0 25px -4px rgba(212, 175, 55, 0.25);
+}
+
+/* Luxury Black Background Boxes / Cards */
+.art-deco-card {
+  background: linear-gradient(180deg, #131722 0%, #0A0D14 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 14px 38px -10px rgba(0, 0, 0, 0.35), 0 0 15px -3px rgba(212, 175, 55, 0.12);
+  backdrop-filter: blur(12px);
+  color: #F1F3F5;
+}
+
+.art-deco-card:hover {
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.45), 0 0 25px -4px rgba(212, 175, 55, 0.22);
+}
+
+/* Tabular Numerals */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

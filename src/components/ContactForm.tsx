@@ -1,499 +1,378 @@
-import React, { useState, useEffect, useId } from 'react';
-import { ShieldCheck, CheckCircle2, ArrowRight, UserCheck, Phone, Mail, Clock, Send, Award, Sparkles, Building2, MapPin, Calculator, AlertCircle } from 'lucide-react';
-import { CreditScoreTier, LoanPurpose, PreQualLeadForm, PropertyType } from '../types';
-import { CA_COUNTY_LIMITS } from '../data/caCounties';
+import React, { useState, useEffect } from 'react';
+import { MARC_PHOTO_DATA_URI } from '../data/marcPhotoDataUri';
+import { ShieldCheck, CheckCircle2, ArrowRight, Phone, Mail, Clock, Send, Award, Zap, Laptop, FileText, Check } from 'lucide-react';
 
 interface ContactFormProps {
   prefilledScenario?: { price: number; down: number; rate: number; term: number } | null;
 }
 
 export const ContactForm: React.FC<ContactFormProps> = ({ prefilledScenario }) => {
-  const [step, setStep] = useState<number>(1);
+  const [formType, setFormType] = useState<'broker' | 'borrower'>('broker');
+  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [submissionResult, setSubmissionResult] = useState<any>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // Form field IDs
-  const estPriceInputId = useId();
-  const downPaymentInputId = useId();
-  const countySelectInputId = useId();
-  const zipCodeInputId = useId();
-  const fullNameInputId = useId();
-  const emailInputId = useId();
-  const phoneInputId = useId();
+  // Form State
+  const [fullName, setFullName] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [losUsed, setLosUsed] = useState('Arive');
+  const [targetPackage, setTargetPackage] = useState('Preferred ($1,195)');
+  const [loanProgram, setLoanProgram] = useState('Conventional Conforming');
+  const [loanAmount, setLoanAmount] = useState('850000');
+  const [propertyState, setPropertyState] = useState('CA');
+  const [notes, setNotes] = useState('');
 
-  const [formData, setFormData] = useState<PreQualLeadForm>({
-    loanPurpose: 'purchase',
-    propertyType: 'single_family',
-    propertyUse: 'primary',
-    estimatedPrice: 850000,
-    downPaymentAmount: 170000,
-    creditScore: 'excellent',
-    county: 'Los Angeles',
-    zipCode: '90210',
-    firstTimeHomeBuyer: true,
-    militaryStatus: 'none',
-    fullName: '',
-    email: '',
-    phone: '',
-    bestTimeToCall: 'afternoon',
-    notes: '',
-  });
-
-  // Apply prefilled values if transferred from calculator
   useEffect(() => {
     if (prefilledScenario) {
-      setFormData(prev => ({
-        ...prev,
-        estimatedPrice: prefilledScenario.price,
-        downPaymentAmount: prefilledScenario.down,
-      }));
+      setLoanAmount(String(prefilledScenario.price - prefilledScenario.down));
     }
   }, [prefilledScenario]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.email || !formData.phone) {
-      setErrorMessage('Please fill out your name, email, and phone number.');
-      return;
-    }
-
     setLoading(true);
-    setErrorMessage(null);
-
-    try {
-      const res = await fetch('/api/quote-request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        setSubmissionResult(data);
-      } else {
-        setErrorMessage(data.error || 'Failed to submit rate quote request.');
-      }
-    } catch (err: any) {
-      // Fallback local simulation if network hiccup
-      setSubmissionResult({
-        success: true,
-        confirmationId: `CA-${Math.floor(100000 + Math.random() * 900000)}`,
-        leadSummary: {
-          loanAmount: formData.estimatedPrice - formData.downPaymentAmount,
-          estimatedRate: formData.militaryStatus !== 'none' ? 5.75 : 6.375,
-          estimatedPI: Math.round(((formData.estimatedPrice - formData.downPaymentAmount) * 0.0053)),
-          estimatedTotalMonthly: Math.round(((formData.estimatedPrice - formData.downPaymentAmount) * 0.0053) + (formData.estimatedPrice * 0.0125 / 12)),
-          county: formData.county,
-          assignedOfficer: {
-            name: "Marc Williamson",
-            title: "Senior CA Mortgage Advisor",
-            nmls: "NMLS #1387796",
-            directPhone: "209-914-6037 Direct",
-            email: "marcwill@goldenstatehomeloan.com"
-          }
-        }
-      });
-    } finally {
+    setTimeout(() => {
       setLoading(false);
-    }
+      setSubmitted(true);
+    }, 800);
   };
 
   return (
-    <section id="contact" className="py-16 bg-slate-900 text-white relative border-b border-slate-800">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 border-b border-[#D4AF37]/35 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 bg-teal-800/60 border border-teal-500/30 text-teal-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-teal-400" /> 3-Minute Streamlined Pre-Qualification
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-sm bg-[#0A0D14] border border-[#D4AF37]/50 text-xs uppercase tracking-[0.25em] text-[#F5D77F] font-semibold shadow-md">
+            <span>◈</span>
+            <span>Immediate Response · Priority Desk</span>
+            <span>◈</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Get a Custom Rate Quote
+          <h2 className="font-cinzel text-3xl sm:text-4xl font-bold tracking-tight text-[#0A0D14]">
+            SUBMIT A FILE OR <span className="gold-gradient-text">CONNECT WITH MARC</span>
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base mt-2">
-            No hard credit pull required. Soft inquiry only with instant rate matching across all California counties.
+          <p className="text-sm sm:text-base text-slate-800 font-normal">
+            Upload your loan scenario for immediate intake with Golden State 3rd Party Loan Processing, or schedule a 1-on-1 operational pipeline strategy review with Marc Williamson.
           </p>
+          <p className="text-[11px] text-slate-600 font-medium">
+            Powered by 1 Touch Processing Arizona NMLS # 2337071
+          </p>
+
+          {/* Form Switcher */}
+          <div className="pt-4 flex items-center justify-center">
+            <div className="inline-flex p-1 bg-[#121622] rounded border border-[#D4AF37]/30">
+              <button
+                type="button"
+                onClick={() => setFormType('broker')}
+                className={`px-5 py-2 text-xs font-semibold rounded-sm transition-all flex items-center gap-1.5 ${
+                  formType === 'broker'
+                    ? 'gold-gradient-bg text-[#0A0D14] shadow'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <Laptop className="w-3.5 h-3.5" />
+                <span>Broker / LO Loan Intake ($0 Upfront)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormType('borrower')}
+                className={`px-5 py-2 text-xs font-semibold rounded-sm transition-all flex items-center gap-1.5 ${
+                  formType === 'borrower'
+                    ? 'gold-gradient-bg text-[#0A0D14] shadow'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>Direct Borrower Scenario</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* If submitted, show Instant Receipt Card */}
-        {submissionResult ? (
-          <div className="bg-teal-950 border border-teal-500/40 rounded-2xl p-8 shadow-2xl space-y-6 text-center max-w-2xl mx-auto animate-fade-in">
-            <div className="w-16 h-16 bg-teal-500/20 text-teal-400 rounded-full flex items-center justify-center mx-auto border border-teal-500/30">
-              <CheckCircle2 className="w-10 h-10" />
-            </div>
-
-            <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-teal-300">Pre-Qualification Submitted</div>
-              <h3 className="text-2xl font-extrabold text-white mt-1">
-                Confirmation ID: <span className="font-mono text-teal-400">{submissionResult.confirmationId}</span>
-              </h3>
-              <p className="text-slate-300 text-xs mt-2">
-                We have assigned your rate quote to your dedicated California Senior Loan Specialist.
-              </p>
-            </div>
-
-            {/* Estimated Quote Card */}
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 text-left space-y-3">
-              <div className="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
-                <span className="text-slate-400">Estimated Target Loan Amount</span>
-                <span className="font-mono font-bold text-white">${submissionResult.leadSummary.loanAmount.toLocaleString()}</span>
-              </div>
-              <div className="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
-                <span className="text-slate-400">Estimated Target Rate</span>
-                <span className="font-mono font-bold text-teal-400">{submissionResult.leadSummary.estimatedRate}%</span>
-              </div>
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-400">Estimated All-In Monthly Payment</span>
-                <span className="font-mono font-bold text-white text-sm">${submissionResult.leadSummary.estimatedTotalMonthly.toLocaleString()}/mo</span>
-              </div>
-            </div>
-
-            {/* Assigned Loan Officer Card */}
-            <div className="bg-slate-900 border border-teal-500/30 rounded-xl p-4 flex items-center gap-4 text-left">
-              <div className="w-12 h-12 rounded-full bg-teal-700 border border-teal-500 text-white font-bold flex items-center justify-center text-lg shrink-0">
-                JM
-              </div>
-              <div className="space-y-0.5">
-                <div className="text-xs font-bold text-teal-300 uppercase tracking-wider">Your Assigned Loan Officer</div>
-                <div className="text-sm font-extrabold text-white">{submissionResult.leadSummary.assignedOfficer.name}</div>
-                <div className="text-[11px] text-slate-400">{submissionResult.leadSummary.assignedOfficer.title} • {submissionResult.leadSummary.assignedOfficer.nmls}</div>
-                <div className="text-xs text-slate-300 flex items-center gap-2 pt-1">
-                  <Phone className="w-3 h-3 text-teal-400" />
-                  <span>{submissionResult.leadSummary.assignedOfficer.directPhone}</span>
+        {/* Form Container */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
+          
+          {/* Left: Marc Direct Priority Card */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="art-deco-card rounded-sm p-6 border border-[#D4AF37]/30 shadow-xl space-y-4">
+              <div className="flex items-center gap-4 border-b border-[#D4AF37]/20 pb-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#D4AF37] shrink-0 bg-[#0A0D14]">
+                  <img
+                    src={MARC_PHOTO_DATA_URI}
+                    alt="Marc Williamson"
+                    className="w-full h-full object-cover object-top"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-semibold block">
+                    Lead Advisor & Director
+                  </span>
+                  <h3 className="font-cinzel text-lg font-bold text-white">
+                    Marc Williamson
+                  </h3>
+                  <span className="text-xs text-slate-300 font-mono block">
+                    NMLS #1387796
+                  </span>
+                  <span className="text-[9px] text-amber-200/90 font-normal block mt-0.5">
+                    Powered by 1 Touch Processing Arizona NMLS # 2337071
+                  </span>
                 </div>
               </div>
+
+              <div className="space-y-3 text-xs text-slate-300">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                  <span>Files scrubbed and acknowledged within 2 hours</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                  <span>Direct phone & text access at all times</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                  <span>$0 fee owed if file does not close</span>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-[#D4AF37]/20 space-y-2">
+                <a
+                  href="tel:2132943747"
+                  className="w-full p-2.5 rounded-sm bg-[#121622] hover:bg-[#1A2030] border border-slate-800 text-slate-200 text-xs flex items-center justify-between group transition-all"
+                >
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    <span className="font-semibold text-white group-hover:text-[#F5D77F]">(213) 294-3747</span>
+                  </div>
+                  <span className="text-[10px] text-[#D4AF37] uppercase font-bold">Call Marc</span>
+                </a>
+
+                <a
+                  href="mailto:marc@goldenstatehomeloan.com"
+                  className="w-full p-2.5 rounded-sm bg-[#121622] hover:bg-[#1A2030] border border-slate-800 text-slate-200 text-xs flex items-center justify-between group transition-all"
+                >
+                  <div className="flex items-center gap-2 min-w-0">
+                    <Mail className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                    <span className="font-semibold text-white group-hover:text-[#F5D77F] truncate text-[11px]">marc@goldenstatehomeloan.com</span>
+                  </div>
+                  <span className="text-[10px] text-[#D4AF37] uppercase font-bold shrink-0">Email</span>
+                </a>
+              </div>
             </div>
 
-            <button
-              onClick={() => {
-                setSubmissionResult(null);
-                setStep(1);
-              }}
-              className="text-xs text-teal-300 hover:underline font-bold"
-            >
-              ← Submit Another Application
-            </button>
+            <div className="p-4 rounded-sm bg-[#10141D] border border-slate-800 text-xs text-slate-400 space-y-1">
+              <span className="text-white font-semibold block">Office Hours & Weekend Rush:</span>
+              <p>Mon - Fri: 8:00 AM - 6:00 PM PST</p>
+              <p>Saturday: 9:00 AM - 2:00 PM (Urgent Disclosures & Locks)</p>
+            </div>
           </div>
-        ) : (
-          /* Multi-Step Wizard Container */
-          <div className="bg-teal-900 border border-teal-800 rounded-2xl shadow-2xl overflow-hidden relative">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-teal-800 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-            {/* Step Progress Bar */}
-            <div className="bg-teal-950/80 px-6 py-4 border-b border-teal-800/80 flex items-center justify-between text-xs font-bold">
-              <div className="flex items-center gap-2">
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 1 ? 'bg-white text-teal-900 font-extrabold' : 'bg-teal-800 text-teal-300'}`}>1</span>
-                <span className={step === 1 ? 'text-white' : 'text-teal-200'}>Goal & Property</span>
-              </div>
+          {/* Right: Intake Form */}
+          <div className="lg:col-span-7">
+            <div className="art-deco-card rounded-sm p-6 sm:p-8 border border-[#D4AF37]/35 shadow-2xl relative">
+              
+              {/* Stepped Corners */}
+              <div className="absolute top-2 left-2 w-3 h-3 border-t border-l border-[#D4AF37]" />
+              <div className="absolute top-2 right-2 w-3 h-3 border-t border-r border-[#D4AF37]" />
+              <div className="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-[#D4AF37]" />
+              <div className="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-[#D4AF37]" />
 
-              <div className="w-8 sm:w-16 h-0.5 bg-teal-800" />
-
-              <div className="flex items-center gap-2">
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 2 ? 'bg-white text-teal-900 font-extrabold' : 'bg-teal-800 text-teal-300'}`}>2</span>
-                <span className={step === 2 ? 'text-white' : 'text-teal-200'}>Finances & Location</span>
-              </div>
-
-              <div className="w-8 sm:w-16 h-0.5 bg-teal-800" />
-
-              <div className="flex items-center gap-2">
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${step >= 3 ? 'bg-white text-teal-900 font-extrabold' : 'bg-teal-800 text-teal-300'}`}>3</span>
-                <span className={step === 3 ? 'text-white' : 'text-teal-200'}>Contact Details</span>
-              </div>
-            </div>
-
-            <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6 relative z-10">
-              {errorMessage && (
-                <div className="bg-red-500/20 border border-red-500/40 text-red-200 text-xs p-3.5 rounded-lg flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4 shrink-0" />
-                  <span>{errorMessage}</span>
+              {submitted ? (
+                <div className="text-center py-10 space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-emerald-950 border border-emerald-500/50 flex items-center justify-center text-emerald-400 mx-auto">
+                    <Check className="w-7 h-7" />
+                  </div>
+                  <h3 className="font-cinzel text-2xl font-bold text-white">
+                    Transmission Received
+                  </h3>
+                  <p className="text-sm text-slate-300 max-w-md mx-auto font-light">
+                    Thank you, <strong>{fullName || 'Partner'}</strong>. Your scenario has been routed directly to <strong>Marc Williamson</strong>. We will review your pipeline and contact you within 2 hours.
+                  </p>
+                  <div className="pt-4">
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="px-5 py-2 text-xs font-semibold text-amber-200 border border-[#D4AF37]/40 rounded-sm hover:bg-[#121622]"
+                    >
+                      Submit Another Scenario
+                    </button>
+                  </div>
                 </div>
-              )}
-
-              {/* STEP 1: GOAL & PROPERTY TYPE */}
-              {step === 1 && (
-                <div className="space-y-6 animate-fade-in">
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-3">1. What is your primary loan objective?</label>
-                    <div className="grid sm:grid-cols-3 gap-3">
-                      {[
-                        { id: 'purchase', label: 'Purchase a Home', sub: 'First-time or next home' },
-                        { id: 'refinance', label: 'Refinance Current Rate', sub: 'Lower monthly payment' },
-                        { id: 'cashout', label: 'Cash-Out Refinance', sub: 'Tap home equity cash' },
-                      ].map((item) => (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => setFormData(prev => ({ ...prev, loanPurpose: item.id as LoanPurpose }))}
-                          className={`p-4 rounded-xl text-left border transition-all ${
-                            formData.loanPurpose === item.id
-                              ? 'bg-white text-teal-900 border-white shadow-md'
-                              : 'bg-white/10 border-white/20 text-teal-100 hover:bg-white/20'
-                          }`}
-                        >
-                          <div className="font-bold text-sm">{item.label}</div>
-                          <div className={`text-xs mt-1 ${formData.loanPurpose === item.id ? 'text-teal-800' : 'text-teal-200/80'}`}>{item.sub}</div>
-                        </button>
-                      ))}
-                    </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+                  <div className="border-b border-[#D4AF37]/20 pb-3 mb-2">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-semibold block">
+                      {formType === 'broker' ? 'Mortgage Broker & LO Intake Portal' : 'Direct Borrower Scenario Portal'}
+                    </span>
+                    <h3 className="font-cinzel text-lg font-bold text-white">
+                      {formType === 'broker' ? 'Submit Loan File Details' : 'Request Rapid Scenario Analysis'}
+                    </h3>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-3">2. What type of property?</label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      {[
-                        { id: 'single_family', label: 'Single Family' },
-                        { id: 'condo', label: 'Condo / Townhome' },
-                        { id: 'multi_family', label: 'Multi-Family (2-4 Units)' },
-                        { id: 'investment', label: 'Investment / DSCR' },
-                      ].map((item) => (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => setFormData(prev => ({ ...prev, propertyType: item.id as PropertyType }))}
-                          className={`p-3 rounded-lg text-center border text-xs font-bold transition-all ${
-                            formData.propertyType === item.id
-                              ? 'bg-white text-teal-900 border-white'
-                              : 'bg-white/10 border-white/20 text-teal-100'
-                          }`}
-                        >
-                          {item.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-3">3. Property Occupancy</label>
-                    <div className="grid grid-cols-3 gap-3 text-xs font-bold">
-                      {[
-                        { id: 'primary', label: 'Primary Residence' },
-                        { id: 'secondary', label: 'Second / Vacation' },
-                        { id: 'investment', label: 'Investment Property' },
-                      ].map((item) => (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => setFormData(prev => ({ ...prev, propertyUse: item.id as any }))}
-                          className={`py-2.5 px-3 rounded-lg border transition-all ${
-                            formData.propertyUse === item.id
-                              ? 'bg-white text-teal-900 border-white'
-                              : 'bg-white/10 border-white/20 text-teal-100'
-                          }`}
-                        >
-                          {item.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => setStep(2)}
-                    className="w-full bg-white hover:bg-teal-50 text-teal-900 font-extrabold py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-sm"
-                  >
-                    <span>Continue to Step 2 (Finances)</span>
-                    <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-                  </button>
-                </div>
-              )}
-
-              {/* STEP 2: FINANCES & LOCATION */}
-              {step === 2 && (
-                <div className="space-y-6 animate-fade-in">
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label htmlFor={estPriceInputId} className="block text-xs font-bold text-teal-100 mb-1.5">Estimated Price / Loan Target ($)</label>
+                      <label className="block text-slate-300 text-[11px] mb-1 font-medium">Your Full Name *</label>
                       <input
-                        id={estPriceInputId}
-                        type="number"
-                        step="10000"
-                        value={formData.estimatedPrice}
-                        onChange={(e) => setFormData(prev => ({ ...prev, estimatedPrice: Number(e.target.value) }))}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-sm font-bold text-white outline-none focus:bg-white/20"
+                        type="text"
+                        required
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        placeholder="e.g. David Vance"
+                        className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
                       />
                     </div>
-
                     <div>
-                      <label htmlFor={downPaymentInputId} className="block text-xs font-bold text-teal-100 mb-1.5">Estimated Down Payment ($)</label>
+                      <label className="block text-slate-300 text-[11px] mb-1 font-medium">
+                        {formType === 'broker' ? 'Brokerage / Company Name *' : 'Property Address / City'}
+                      </label>
                       <input
-                        id={downPaymentInputId}
-                        type="number"
-                        step="5000"
-                        value={formData.downPaymentAmount}
-                        onChange={(e) => setFormData(prev => ({ ...prev, downPaymentAmount: Number(e.target.value) }))}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-sm font-bold text-white outline-none focus:bg-white/20"
+                        type="text"
+                        required
+                        value={companyName}
+                        onChange={(e) => setCompanyName(e.target.value)}
+                        placeholder={formType === 'broker' ? "e.g. Pacific Coast Lending" : "e.g. Newport Beach, CA"}
+                        className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-teal-100 mb-2">Estimated Credit Score Tier</label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      {[
-                        { id: 'excellent', label: '740+ (Excellent)' },
-                        { id: 'good', label: '700 - 739 (Good)' },
-                        { id: 'fair', label: '660 - 699 (Fair)' },
-                        { id: 'rebuilding', label: 'Under 660' },
-                      ].map((item) => (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => setFormData(prev => ({ ...prev, creditScore: item.id as CreditScoreTier }))}
-                          className={`p-2.5 rounded-lg border text-xs font-semibold text-center transition-all ${
-                            formData.creditScore === item.id
-                              ? 'bg-white text-teal-900 border-white font-bold'
-                              : 'bg-white/10 border-white/20 text-teal-100'
-                          }`}
-                        >
-                          {item.label}
-                        </button>
-                      ))}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-slate-300 text-[11px] mb-1 font-medium">Email Address *</label>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="you@company.com"
+                        className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 text-[11px] mb-1 font-medium">Direct Phone Number *</label>
+                      <input
+                        type="tel"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="(555) 000-0000"
+                        className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
+                      />
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor={countySelectInputId} className="block text-xs font-bold text-teal-100 mb-1.5">California County</label>
+                  {formType === 'broker' && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-slate-300 text-[11px] mb-1 font-medium">LOS Platform Used</label>
+                        <select
+                          value={losUsed}
+                          onChange={(e) => setLosUsed(e.target.value)}
+                          className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
+                        >
+                          <option value="Arive">Arive (Native 1-Click)</option>
+                          <option value="LendingPad">LendingPad</option>
+                          <option value="Encompass">Encompass (ICE)</option>
+                          <option value="Calyx">Calyx Point</option>
+                          <option value="Byte">Byte Software</option>
+                          <option value="Other">Other / Direct File Upload</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-slate-300 text-[11px] mb-1 font-medium">Requested Package</label>
+                        <select
+                          value={targetPackage}
+                          onChange={(e) => setTargetPackage(e.target.value)}
+                          className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
+                        >
+                          <option value="Streamline ($695)">Streamline Refi ($695)</option>
+                          <option value="Standard ($995)">Standard ($995)</option>
+                          <option value="Preferred ($1,195)">Preferred - Most Popular ($1,195)</option>
+                          <option value="Elite LOA ($1,495)">Elite LOA + Processing ($1,495)</option>
+                        </select>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="sm:col-span-2">
+                      <label className="block text-slate-300 text-[11px] mb-1 font-medium">Loan Program</label>
                       <select
-                        id={countySelectInputId}
-                        value={formData.county}
-                        onChange={(e) => setFormData(prev => ({ ...prev, county: e.target.value }))}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-xs font-bold text-white outline-none"
+                        value={loanProgram}
+                        onChange={(e) => setLoanProgram(e.target.value)}
+                        className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
                       >
-                        {CA_COUNTY_LIMITS.map(c => (
-                          <option key={c.county} value={c.county} className="text-slate-900">
-                            {c.county} County ({c.tier})
-                          </option>
-                        ))}
+                        <option value="Conventional Conforming">Conventional Conforming (DU/LPA)</option>
+                        <option value="Jumbo & High-Balance">Jumbo & High-Balance ($1M+)</option>
+                        <option value="Non-QM Bank Statements">Non-QM Bank Statement (12/24 Mo)</option>
+                        <option value="DSCR Real Estate Investor">DSCR Investor Loan</option>
+                        <option value="Government (FHA/VA/USDA)">Government (FHA, VA IRRRL, USDA)</option>
+                        <option value="Foreign National / ITIN">Foreign National / ITIN Loans</option>
+                        <option value="Commercial / Bridge">Commercial / Fix & Flip / Bridge</option>
                       </select>
                     </div>
 
                     <div>
-                      <label htmlFor={zipCodeInputId} className="block text-xs font-bold text-teal-100 mb-1.5">Property Zip Code</label>
-                      <input
-                        id={zipCodeInputId}
-                        type="text"
-                        maxLength={5}
-                        value={formData.zipCode}
-                        onChange={(e) => setFormData(prev => ({ ...prev, zipCode: e.target.value }))}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-xs text-white outline-none"
-                      />
+                      <label className="block text-slate-300 text-[11px] mb-1 font-medium">State</label>
+                      <select
+                        value={propertyState}
+                        onChange={(e) => setPropertyState(e.target.value)}
+                        className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
+                      >
+                        <option value="AZ">Arizona (AZ) · MB-1037930</option>
+                        <option value="CA">California (CA) · CA-DBO1289441</option>
+                        <option value="CO">Colorado (CO) · 100535928</option>
+                        <option value="FL">Florida (FL) · LO113558 / LO114744</option>
+                        <option value="IL">Illinois (IL) · EEP.0000049</option>
+                        <option value="MI">Michigan (MI) · 2337071</option>
+                        <option value="OK">Oklahoma (OK) · MB016515</option>
+                        <option value="PA">Pennsylvania (PA) · 112928</option>
+                        <option value="TX">Texas (TX) · TX SML Licensed</option>
+                        <option value="Other">Other State</option>
+                      </select>
                     </div>
                   </div>
 
-                  {/* Military checkbox */}
-                  <div className="p-3 bg-white/10 border border-white/20 rounded-lg flex items-center justify-between text-xs">
-                    <span className="text-teal-100">Are you an active military member or U.S. Veteran?</span>
-                    <button
-                      type="button"
-                      onClick={() => setFormData(prev => ({ ...prev, militaryStatus: prev.militaryStatus === 'none' ? 'veteran' : 'none' }))}
-                      className={`px-3 py-1 rounded font-bold ${formData.militaryStatus !== 'none' ? 'bg-white text-teal-900' : 'bg-teal-800 text-teal-200'}`}
-                    >
-                      {formData.militaryStatus !== 'none' ? 'Yes (VA Eligible)' : 'No'}
-                    </button>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setStep(1)}
-                      className="w-1/3 bg-teal-800 hover:bg-teal-700 text-white font-bold py-3.5 rounded-xl text-xs"
-                    >
-                      ← Back
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setStep(3)}
-                      className="w-2/3 bg-white hover:bg-teal-50 text-teal-900 font-extrabold py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-sm"
-                    >
-                      <span>Continue to Final Step</span>
-                      <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 3: CONTACT DETAILS */}
-              {step === 3 && (
-                <div className="space-y-6 animate-fade-in">
                   <div>
-                    <label htmlFor={fullNameInputId} className="block text-xs font-bold text-teal-100 mb-1.5">Full Name *</label>
-                    <input
-                      id={fullNameInputId}
-                      type="text"
-                      required
-                      placeholder="e.g. Michael Rodriguez"
-                      value={formData.fullName}
-                      onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
-                      className="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-sm text-white placeholder:text-teal-200/50 outline-none focus:bg-white/20"
+                    <label className="block text-slate-300 text-[11px] mb-1 font-medium">
+                      Loan Amount / Target Closing Timeline / Notes
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={notes}
+                      onChange={(e) => setNotes(e.target.value)}
+                      placeholder="Enter target closing date, estimated loan amount, or specific file conditions to review..."
+                      className="w-full bg-[#121622] border border-slate-800 rounded-sm p-2.5 text-slate-100 focus:border-[#D4AF37] outline-none"
                     />
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor={emailInputId} className="block text-xs font-bold text-teal-100 mb-1.5">Email Address *</label>
-                      <input
-                        id={emailInputId}
-                        type="email"
-                        required
-                        placeholder="m.rodriguez@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-sm text-white placeholder:text-teal-200/50 outline-none focus:bg-white/20"
-                      />
-                    </div>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-3.5 rounded-sm font-cinzel font-bold text-xs uppercase tracking-wider text-[#0A0D14] gold-gradient-bg hover:brightness-110 shadow-lg transition-all flex items-center justify-center gap-2 mt-2"
+                  >
+                    {loading ? (
+                      <span>Transmitting File Details...</span>
+                    ) : (
+                      <>
+                        <span>Submit to Marc Williamson</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
 
-                    <div>
-                      <label htmlFor={phoneInputId} className="block text-xs font-bold text-teal-100 mb-1.5">Phone Number *</label>
-                      <input
-                        id={phoneInputId}
-                        type="tel"
-                        required
-                        placeholder="(310) 555-0199"
-                        value={formData.phone}
-                        onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg p-2.5 text-sm text-white placeholder:text-teal-200/50 outline-none focus:bg-white/20"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="p-3 bg-white/10 border border-white/20 rounded-xl text-xs text-teal-100 flex items-start gap-2">
-                    <ShieldCheck className="w-5 h-5 text-teal-300 shrink-0 mt-0.5" />
-                    <div>
-                      <strong>Strict Privacy Guarantee:</strong> Your details are strictly confidential. Soft credit check only — zero impact on your credit score.
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setStep(2)}
-                      className="w-1/3 bg-teal-800 hover:bg-teal-700 text-white font-bold py-3.5 rounded-xl text-xs"
-                    >
-                      ← Back
-                    </button>
-
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="w-2/3 bg-white hover:bg-teal-50 text-teal-900 font-extrabold py-3.5 rounded-xl transition-all shadow-xl flex items-center justify-center gap-2 text-sm disabled:opacity-50"
-                    >
-                      {loading ? (
-                        <span>Processing Instant Match...</span>
-                      ) : (
-                        <>
-                          <Send className="w-4 h-4 stroke-[2.5]" />
-                          <span>Send Quote Request</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
+                  <p className="text-[10px] text-center text-slate-500">
+                    🔒 SSL Encrypted & Confidential. NMLS #1387796 compliant. No upfront fees are collected.
+                  </p>
+                </form>
               )}
-            </form>
+
+            </div>
           </div>
-        )}
+
+        </div>
+
       </div>
     </section>
   );

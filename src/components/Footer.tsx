@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, Shield, Award, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Shield, Award, Phone, Mail, MapPin, Zap } from 'lucide-react';
 
 interface FooterProps {
   onNavigateSection: (id: string) => void;
@@ -8,95 +8,162 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPreQual }) => {
   return (
-    <footer className="bg-slate-900 text-slate-400 text-xs border-t border-slate-800 pt-12 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        {/* Main Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+    <footer className="bg-[#06080B] text-slate-400 text-xs border-t border-[#D4AF37]/25 pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Main Footer Row */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          
           {/* Brand Col */}
-          <div className="col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-lg bg-teal-700 flex items-center justify-center text-white font-bold shadow-md">
-                <Compass className="w-5 h-5" />
+          <div className="md:col-span-4 space-y-4">
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 border border-[#D4AF37]/50 rounded-sm bg-[#121622] flex items-center justify-center text-[#D4AF37] font-cinzel font-bold text-base shrink-0">
+                  GS
+                </div>
+                <span className="font-cinzel text-base sm:text-lg font-bold text-white tracking-[0.12em] leading-tight">
+                  GOLDEN STATE <span className="gold-gradient-text block sm:inline">3RD PARTY LOAN PROCESSING</span>
+                </span>
               </div>
-              <span className="text-lg font-extrabold text-white tracking-tight">GOLDEN STATE HOME LOAN</span>
+              <div className="text-[10px] text-amber-200/90 font-medium tracking-wide mt-1 pl-12">
+                Powered by 1 Touch Processing Arizona NMLS # 2337071
+              </div>
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              Direct California mortgage lender providing competitive rates, fast 14-day approvals, and zero-junk-fee home purchase and refinance options across all 58 California counties.
+
+            <p className="text-slate-400 text-xs leading-relaxed max-w-sm font-light">
+              Premier third-party contract mortgage processing for mortgage brokers, loan officers, and lenders. Integrated natively into Arive, LendingPad, and Encompass with $0 upfront cost.
             </p>
-            <div className="flex items-center gap-3 text-slate-300 font-semibold text-xs">
-              <span className="flex items-center gap-1"><Shield className="w-3.5 h-3.5 text-teal-400" /> NMLS #1387796</span>
-              <span>•</span>
-              <span className="flex items-center gap-1"><Award className="w-3.5 h-3.5 text-teal-400" /> Equal Housing Lender</span>
+
+            <div className="flex flex-wrap items-center gap-3 text-slate-300 text-xs pt-1">
+              <span className="flex items-center gap-1">
+                <Shield className="w-3.5 h-3.5 text-[#D4AF37]" /> 
+                <span>NMLS #1387796</span>
+              </span>
+              <span>·</span>
+              <span className="flex items-center gap-1">
+                <Award className="w-3.5 h-3.5 text-[#D4AF37]" /> 
+                <span>Equal Housing Opportunity</span>
+              </span>
             </div>
           </div>
 
-          {/* Quick Nav */}
-          <div className="space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-white">Loan Calculators</div>
+          {/* Nav: Solutions */}
+          <div className="md:col-span-2 space-y-3">
+            <div className="font-cinzel text-xs font-bold uppercase tracking-wider text-white">
+              Processing
+            </div>
             <ul className="space-y-2 text-xs">
-              <li><button onClick={() => onNavigateSection('calculator')} className="hover:text-teal-400 transition-colors">Mortgage Calculator</button></li>
-              <li><button onClick={() => onNavigateSection('calculator')} className="hover:text-teal-400 transition-colors">Home Affordability</button></li>
-              <li><button onClick={() => onNavigateSection('calculator')} className="hover:text-teal-400 transition-colors">Refinance Savings</button></li>
-              <li><button onClick={() => onNavigateSection('county-limits')} className="hover:text-teal-400 transition-colors">2026 CA County Limits</button></li>
+              <li>
+                <button onClick={() => onNavigateSection('packages')} className="hover:text-[#D4AF37] transition-colors">
+                  Processing Packages
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('workflow')} className="hover:text-[#D4AF37] transition-colors">
+                  How It Works (LOS)
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('loan-types')} className="hover:text-[#D4AF37] transition-colors">
+                  Loan Programs
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('state-intel')} className="hover:text-[#D4AF37] transition-colors">
+                  State-By-State Intel
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('calculator')} className="hover:text-[#D4AF37] transition-colors">
+                  Overhead Savings ROI
+                </button>
+              </li>
             </ul>
           </div>
 
-          {/* Programs */}
-          <div className="space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-white">California Programs</div>
+          {/* Nav: Specialized Products */}
+          <div className="md:col-span-2 space-y-3">
+            <div className="font-cinzel text-xs font-bold uppercase tracking-wider text-white">
+              Specialized Programs
+            </div>
             <ul className="space-y-2 text-xs">
-              <li><button onClick={() => onNavigateSection('programs')} className="hover:text-teal-400 transition-colors">Conventional Loans</button></li>
-              <li><button onClick={() => onNavigateSection('programs')} className="hover:text-teal-400 transition-colors">FHA Home Financing</button></li>
-              <li><button onClick={() => onNavigateSection('programs')} className="hover:text-teal-400 transition-colors">VA 0% Down Loans</button></li>
-              <li><button onClick={() => onNavigateSection('programs')} className="hover:text-teal-400 transition-colors">Jumbo & High-Cost Tiers</button></li>
-              <li><button onClick={() => onNavigateSection('programs')} className="hover:text-teal-400 transition-colors">DSCR Investor Loans</button></li>
+              <li>
+                <button onClick={() => onNavigateSection('loan-types')} className="hover:text-[#D4AF37] text-amber-200 transition-colors flex items-center gap-1">
+                  <Shield className="w-3 h-3 text-[#D4AF37]" />
+                  <span>Jumbo & High-Balance</span>
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('loan-types')} className="hover:text-[#D4AF37] transition-colors">
+                  FHA, VA & USDA Government
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('loan-types')} className="hover:text-[#D4AF37] transition-colors">
+                  Non-QM Bank Statements
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('loan-types')} className="hover:text-[#D4AF37] transition-colors">
+                  DSCR Real Estate Investor
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigateSection('reviews')} className="hover:text-[#D4AF37] transition-colors">
+                  Broker Testimonials
+                </button>
+              </li>
             </ul>
           </div>
 
-          {/* Direct Contact */}
-          <div className="space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-white">Speak to a Calif Advisor</div>
-            <div className="space-y-2 text-xs text-slate-300">
-              <div className="font-bold text-teal-300">Marc Williamson</div>
-              <a href="tel:2099146037" className="flex items-center gap-2 hover:text-teal-400 transition-colors font-semibold">
-                <Phone className="w-3.5 h-3.5 text-teal-400" /> 209-914-6037 Direct
-              </a>
-              <a href="mailto:marcwill@goldenstatehomeloan.com" className="flex items-center gap-2 hover:text-teal-400 transition-colors">
-                <Mail className="w-3.5 h-3.5 text-teal-400" /> marcwill@goldenstatehomeloan.com
-              </a>
-              <div className="text-[11px] text-slate-400">
-                NMLS #1387796
+          {/* Executive Direct Contact */}
+          <div className="md:col-span-4 space-y-3">
+            <div className="font-cinzel text-xs font-bold uppercase tracking-wider text-white">
+              Direct Contact
+            </div>
+            <div className="p-4 rounded-sm bg-[#0E121A] border border-[#D4AF37]/30 space-y-2">
+              <div className="text-white font-semibold text-xs flex items-center justify-between">
+                <span>Marc Williamson</span>
+                <span className="text-[10px] text-[#F5D77F] uppercase tracking-wider">Senior Director</span>
               </div>
-              <div className="flex items-start gap-2 text-[11px] text-slate-400 pt-1">
-                <MapPin className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />
-                <span>Headquarters: 100 Wilshire Blvd, Suite 1200, Santa Monica, CA 90401</span>
+              <div className="text-slate-400 text-xs">
+                California License · Nationwide Processing Support
+              </div>
+              <div className="pt-2 border-t border-slate-800 space-y-1.5">
+                <a
+                  href="tel:2132943747"
+                  className="flex items-center gap-2 text-slate-200 hover:text-[#F5D77F] transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <span className="font-mono font-semibold">(213) 294-3747 Direct Cell</span>
+                </a>
+                <a
+                  href="mailto:marc@goldenstatehomeloan.com"
+                  className="flex items-center gap-2 text-slate-200 hover:text-[#F5D77F] transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <span className="text-[11px] truncate">marc@goldenstatehomeloan.com</span>
+                </a>
               </div>
             </div>
           </div>
+
         </div>
 
-        {/* NMLS & Legal Disclosures */}
-        <div className="pt-8 border-t border-slate-800 text-[11px] text-slate-500 space-y-3 leading-relaxed">
+        {/* Regulatory Disclaimers */}
+        <div className="pt-8 border-t border-slate-900 text-[11px] text-slate-500 space-y-3 leading-relaxed">
           <p>
-            <strong>Licensing & Legal Compliance:</strong> Golden State Home Loan LLC. NMLS Unique Identifier #1387796. Licensed by the California Department of Financial Protection and Innovation under the California Residential Mortgage Lending Act. Equal Housing Lender. All rights reserved.
+            <strong>Regulatory &amp; Compliance Disclosure:</strong> Golden State 3rd Party Loan Processing provides independent third-party contract mortgage loan processing services pursuant to applicable federal and state mortgage licensing laws and RESPA Section 8. Processing fees are disclosed on the Loan Estimate (LE) and Closing Disclosure (CD) and collected at closing through Title/Escrow. Marc Williamson (NMLS #1387796, CA DRE #0143-0833). Equal Housing Opportunity.
           </p>
-          <p>
-            <strong>Rate & APR Disclosures:</strong> Interest rates and APRs quoted are for informational purposes only, subject to market volatility, credit approval, underwriting guidelines, and property valuation. Advertised 30-Year Fixed rates assume a conforming loan amount of $650,000, 740 credit score, and 20% down payment unless stated otherwise.
-          </p>
-          <div className="flex flex-wrap items-center justify-between gap-4 text-slate-400 pt-3 border-t border-slate-800">
-            <span>© {new Date().getFullYear()} Golden State Home Loan. All Rights Reserved.</span>
-            <div className="flex gap-4 text-[11px]">
-              <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy Policy: Golden State Home Loan respects consumer data privacy. We do not sell personal financial information.'); }} className="hover:underline">Privacy Policy</a>
-              <a href="#terms" onClick={(e) => { e.preventDefault(); alert('Terms of Use: All mortgage calculations provided are estimates for planning purposes.'); }} className="hover:underline">Terms of Use</a>
-              <a href="#nmls" onClick={(e) => { e.preventDefault(); window.open('https://www.nmlsconsumeraccess.org', '_blank'); }} className="hover:underline flex items-center gap-1">NMLS Consumer Access <ExternalLink className="w-3 h-3" /></a>
-            </div>
+          <div className="p-3 rounded-sm bg-[#0B0E14] border border-[#D4AF37]/25 text-[10px] text-slate-400 font-mono leading-relaxed">
+            <strong className="text-amber-200">State Licensing Directory:</strong> 1 Touch Processing LLC | NMLS#: 2337071 | AZ Mortgage Broker License #: MB-1037930 | CA LICENSE #: CA-DBO1289441 | CO LICENSE #: 100535928 | FL License #: LO113558 | FL License #: LO114744 | IL License #: EEP.0000049 | MI License # 2337071 | OK License #: MB016515 | PA License #: 112928 | TX SML Licensed
           </div>
-
-          {/* Very bottom Powered By Banner */}
-          <div className="pt-4 border-t border-slate-800/80 text-center text-xs font-bold text-slate-300 tracking-wide bg-slate-900/60 py-3 rounded-xl border border-slate-800">
-            <span>Powered by Omni-Fund, Inc NMLS# 4869 DRE License# 0143-0833</span>
+          <div className="flex flex-col sm:flex-row items-center justify-between text-slate-600 text-[10px] gap-2 pt-1">
+            <span>© {new Date().getFullYear()} Golden State 3rd Party Loan Processing. All rights reserved. Powered by 1 Touch Processing Arizona NMLS # 2337071.</span>
+            <span>Licensed in AZ, CA, CO, FL, IL, MI, OK, PA &amp; TX</span>
           </div>
         </div>
+
       </div>
     </footer>
   );

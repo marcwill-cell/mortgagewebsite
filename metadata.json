@@ -1,6 +1,6 @@
 {
   "name": "California Mortgage Lender",
-  "description": "Modern California mortgage lender platform with instant rate quotes, integrated loan calculator, streamlined application form, and custom CA loan guides.",
+  "description": "Golden State 3rd Party Loan Processing platform with Marc Williamson. Powered by 1 Touch Processing Arizona NMLS # 2337071. Instant rate quotes, integrated broker ROI calculator, and loan intake.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

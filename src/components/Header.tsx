@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Shield, ArrowRight, Menu, X, ChevronRight, Calculator, FileText, Compass, Award } from 'lucide-react';
+import { Phone, Shield, ArrowRight, Menu, X, ChevronRight, Calculator, FileText, Zap } from 'lucide-react';
 
 interface HeaderProps {
   onOpenPreQual: () => void;
@@ -15,132 +15,114 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md text-slate-800 border-b border-slate-200 shadow-sm">
-      {/* Top Announcement Bar */}
-      <div className="bg-teal-900 text-teal-100 text-xs font-semibold py-1.5 px-4 text-center tracking-wide">
+    <header className="sticky top-0 z-40 bg-[#090C10]/95 backdrop-blur-md text-slate-100 border-b border-[#D4AF37]/25 shadow-2xl">
+      {/* Top Gilded Ribbon */}
+      <div className="bg-[#0D1017] border-b border-[#D4AF37]/15 text-xs py-1.5 px-4 text-center tracking-wider text-slate-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 mx-auto sm:mx-0">
-            <span className="bg-teal-700 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">2026 CA Limits</span>
-            <span>California Conforming Limit: <strong className="text-white font-extrabold">$766,550</strong> | High-Cost Counties up to <strong className="text-white font-extrabold">$1,149,825</strong></span>
+          <div className="flex items-center gap-2 mx-auto sm:mx-0 text-[11px] sm:text-xs">
+            <span className="text-[#D4AF37] font-semibold uppercase tracking-widest flex items-center gap-1">
+              <span className="text-[10px]">◈</span> GOLDEN STATE 3RD PARTY LOAN PROCESSING
+            </span>
+            <span className="hidden md:inline text-slate-500">|</span>
+            <span className="text-[10px] text-amber-200/90 hidden sm:inline font-normal">Powered by 1 Touch Processing Arizona NMLS # 2337071</span>
+            <span className="text-[#D4AF37] font-medium hidden lg:inline">· $0 Upfront Overhead</span>
           </div>
-          <div className="hidden sm:flex items-center gap-4 text-teal-200 font-medium">
-            <span className="flex items-center gap-1"><Shield className="w-3.5 h-3.5 text-teal-400" /> NMLS #1387796</span>
-            <span className="flex items-center gap-1"><Award className="w-3.5 h-3.5 text-teal-400" /> Equal Housing Lender</span>
+
+          <div className="hidden sm:flex items-center gap-4 text-slate-300 text-xs font-medium">
+            <a 
+              href="tel:2132943747"
+              className="flex items-center gap-1.5 text-amber-200 hover:text-white transition-colors"
+            >
+              <Phone className="w-3 h-3 text-[#D4AF37]" />
+              <span className="font-semibold">(213) 294-3747</span>
+            </a>
+            <span className="text-slate-600">·</span>
+            <span className="flex items-center gap-1 text-slate-400">
+              <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span>NMLS #1387796</span>
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Main Nav Bar */}
+      {/* Main Nav Bar - Strict 3-Zone Contract */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Logo */}
+        {/* Zone 1: Single text element wordmark */}
         <div 
-          onClick={() => handleNavClick('hero')} 
-          className="flex items-center gap-3 cursor-pointer group"
+          onClick={() => handleNavClick('hero')}
+          className="flex items-center gap-3 cursor-pointer group select-none"
         >
-          <div className="w-11 h-11 rounded-xl bg-teal-700 flex items-center justify-center text-white shadow-md group-hover:bg-teal-800 transition-colors">
-            <Compass className="w-6 h-6 stroke-[2.5]" />
+          <div className="w-10 h-10 border border-[#D4AF37]/50 rounded-sm bg-gradient-to-br from-[#1A1F2B] to-[#0A0D14] flex items-center justify-center text-[#D4AF37] shadow-lg group-hover:border-[#D4AF37] transition-all shrink-0">
+            <span className="font-cinzel text-base font-bold tracking-tighter">GS</span>
           </div>
-          <div>
-            <div className="text-xl font-black tracking-tight text-slate-900 flex items-center gap-1.5 font-sans">
-              GOLDEN STATE <span className="text-teal-700 font-bold text-sm bg-teal-50 px-2 py-0.5 rounded border border-teal-200">HOME LOAN</span>
-            </div>
-            <p className="text-[10px] text-slate-500 tracking-wider uppercase font-semibold">California Direct Mortgage Specialist</p>
+          <div className="flex flex-col">
+            <span className="font-cinzel text-sm sm:text-base lg:text-lg font-bold tracking-[0.12em] text-white group-hover:text-[#F5D77F] transition-colors leading-tight">
+              GOLDEN STATE <span className="gold-gradient-text">3RD PARTY LOAN PROCESSING</span>
+            </span>
+            <span className="text-[10px] tracking-normal text-slate-300 font-normal">
+              Powered by 1 Touch Processing Arizona NMLS # 2337071
+            </span>
           </div>
         </div>
 
-        {/* Desktop Nav Items */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+        {/* Zone 2: Clean text navigation links */}
+        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
           <button 
-            onClick={() => handleNavClick('about-marc')}
-            className="hover:text-teal-700 transition-colors py-2 flex items-center gap-1 font-extrabold text-teal-800"
+            onClick={() => handleNavClick('packages')}
+            className="hover:text-[#D4AF37] transition-colors tracking-wide cursor-pointer"
           >
-            <span>About Marc</span>
-            <span className="text-[10px] bg-teal-100 text-teal-800 px-1.5 py-0.5 rounded font-bold">ADVISOR</span>
+            Packages
           </button>
           <button 
-            onClick={() => handleNavClick('heloc')}
-            className="hover:bg-teal-100 transition-all py-1 px-3 min-w-[185px] flex flex-col items-center justify-center bg-teal-50 rounded-lg border border-teal-200 whitespace-nowrap shadow-sm"
+            onClick={() => handleNavClick('workflow')}
+            className="hover:text-[#D4AF37] transition-colors tracking-wide cursor-pointer"
           >
-            <span className="text-[10px] font-extrabold text-teal-800 tracking-tight leading-tight">*3-5 day HELOC closings</span>
-            <span className="font-bold text-xs text-teal-900 leading-tight">HELOC (600 FICO)</span>
+            How It Works
           </button>
           <button 
-            onClick={() => handleNavClick('reverse-mortgage')}
-            className="hover:text-emerald-700 transition-colors h-9 px-3 min-w-[180px] flex items-center justify-center gap-1 font-bold text-xs text-emerald-900 bg-emerald-50 rounded-lg border border-emerald-200 whitespace-nowrap"
+            onClick={() => handleNavClick('loan-types')}
+            className="hover:text-[#D4AF37] transition-colors tracking-wide cursor-pointer"
           >
-            <span>Reverse Mortgage (Age 55+)</span>
+            Loan Types
+          </button>
+          <button 
+            onClick={() => handleNavClick('state-intel')}
+            className="hover:text-[#D4AF37] transition-colors tracking-wide cursor-pointer"
+          >
+            State Intel
           </button>
           <button 
             onClick={() => handleNavClick('calculator')}
-            className="hover:text-teal-700 transition-colors flex items-center gap-1 py-2"
+            className="hover:text-[#D4AF37] transition-colors tracking-wide cursor-pointer"
           >
-            <Calculator className="w-4 h-4 text-teal-700" />
-            <span>Loan Calculator</span>
+            Overhead Calculator
           </button>
           <button 
-            onClick={() => handleNavClick('contact')}
-            className="hover:text-teal-700 transition-colors flex items-center gap-1 py-2"
+            onClick={() => handleNavClick('about-marc')}
+            className="hover:text-[#D4AF37] transition-colors tracking-wide cursor-pointer flex items-center gap-1 text-amber-200/90"
           >
-            <FileText className="w-4 h-4 text-teal-700" />
-            <span>Rate Quote Form</span>
-          </button>
-          <button 
-            onClick={() => handleNavClick('programs')}
-            className="hover:text-teal-700 transition-colors py-2"
-          >
-            Programs
-          </button>
-          <button 
-            onClick={() => handleNavClick('county-limits')}
-            className="hover:text-teal-700 transition-colors py-2"
-          >
-            CA Limits
-          </button>
-          <button 
-            onClick={() => handleNavClick('ai-advisor')}
-            className="hover:text-teal-700 transition-colors py-2 flex items-center gap-1"
-          >
-            <span>AI Rate Advisor</span>
+            <span>Marc Williamson</span>
           </button>
         </nav>
 
-        {/* Actions */}
-        <div className="hidden lg:flex items-center gap-5">
-          <a 
-            href="tel:2099146037" 
-            className="flex items-center gap-2.5 text-slate-700 hover:text-teal-700 transition-colors group"
-          >
-            <div className="w-9 h-9 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-700 group-hover:bg-teal-700 group-hover:text-white transition-colors shrink-0">
-              <Phone className="w-4 h-4" />
-            </div>
-            <div className="text-left leading-tight">
-              <div className="text-[10px] uppercase text-teal-800 font-extrabold tracking-wider">Speak to a Calif Advisor Marc Williamson</div>
-              <div className="text-xs font-extrabold text-slate-900 tracking-tight">209-914-6037 Direct</div>
-              <div className="text-[10px] text-slate-500 font-medium">marcwill@goldenstatehomeloan.com</div>
-            </div>
-          </a>
+        {/* Zone 3: 1-2 primary actions */}
+        <div className="hidden sm:flex items-center gap-3">
 
+          {/* Primary CTA button */}
           <button
             onClick={onOpenPreQual}
-            className="bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-teal-700/20 flex items-center gap-2 active:scale-95"
+            className="relative px-5 py-2.5 rounded-sm font-semibold text-xs uppercase tracking-[0.15em] text-[#0A0D14] gold-gradient-bg hover:brightness-110 shadow-lg transition-all flex items-center gap-1.5 border border-[#F5D77F]/60"
           >
-            <span>Get Rate Quote</span>
-            <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+            <span>Submit Loan / Partner</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
-        {/* Mobile menu trigger */}
-        <div className="flex items-center gap-3 md:hidden">
-          <button
-            onClick={onOpenPreQual}
-            className="bg-teal-700 text-white text-xs font-bold px-3 py-2 rounded-lg"
-          >
-            Get Quote
-          </button>
-
+        {/* Mobile Hamburger Button */}
+        <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-slate-100 text-slate-700 hover:text-slate-900"
+            className="p-2 border border-[#D4AF37]/30 text-[#D4AF37] hover:bg-[#141822] rounded-sm transition-colors"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -148,81 +130,72 @@ export const Header: React.FC<HeaderProps> = ({ onOpenPreQual, onNavigateSection
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+        <div className="lg:hidden border-t border-[#D4AF37]/20 bg-[#090C10] px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top duration-200">
+          <div className="grid grid-cols-2 gap-2 text-xs font-medium text-slate-300 pb-2 border-b border-slate-800">
+            <button
+              onClick={() => handleNavClick('packages')}
+              className="p-2.5 text-left rounded bg-[#10141D] hover:text-[#D4AF37] border border-slate-800"
+            >
+              Packages & Fees
+            </button>
+            <button
+              onClick={() => handleNavClick('workflow')}
+              className="p-2.5 text-left rounded bg-[#10141D] hover:text-[#D4AF37] border border-slate-800"
+            >
+              How It Works
+            </button>
+            <button
+              onClick={() => handleNavClick('loan-types')}
+              className="p-2.5 text-left rounded bg-[#10141D] hover:text-[#D4AF37] border border-slate-800"
+            >
+              Loan Programs
+            </button>
+            <button
+              onClick={() => handleNavClick('state-intel')}
+              className="p-2.5 text-left rounded bg-[#10141D] hover:text-[#D4AF37] border border-slate-800"
+            >
+              State-By-State Intel
+            </button>
+            <button
+              onClick={() => handleNavClick('calculator')}
+              className="p-2.5 text-left rounded bg-[#10141D] hover:text-[#D4AF37] border border-slate-800"
+            >
+              Overhead Savings
+            </button>
+            <button
+              onClick={() => handleNavClick('about-marc')}
+              className="p-2.5 text-left rounded bg-[#10141D] text-amber-200 border border-[#D4AF37]/30"
+            >
+              About Marc Williamson
+            </button>
+          </div>
+
+
+          {/* Mobile Primary Submit */}
           <button
-            onClick={() => handleNavClick('about-marc')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-teal-50 border border-teal-200 text-teal-900 font-extrabold flex items-center justify-between"
+            onClick={() => {
+              onOpenPreQual();
+              setMobileMenuOpen(false);
+            }}
+            className="w-full py-3 rounded text-xs font-bold uppercase tracking-widest text-[#0A0D14] gold-gradient-bg flex items-center justify-center gap-2 shadow-lg"
           >
-            <span>About Marc Williamson (Calif Advisor)</span>
-            <ChevronRight className="w-4 h-4 text-teal-700" />
+            <span>Submit File / Partner Consultation</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
 
-          <button
-            onClick={() => handleNavClick('heloc')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-teal-900 text-white font-extrabold flex items-center justify-between"
-          >
-            <div className="flex flex-col">
-              <span className="text-[11px] text-teal-300 font-extrabold tracking-tight">*3-5 day HELOC closings</span>
-              <span className="text-sm">HELOC & 2nd Mortgages (Down to 600 FICO)</span>
+          <div className="pt-2 text-center text-xs text-slate-400 flex flex-col items-center justify-center gap-1">
+            <div className="text-[10px] text-amber-200/90 font-normal">
+              Powered by 1 Touch Processing Arizona NMLS # 2337071
             </div>
-            <ChevronRight className="w-4 h-4 text-teal-300 shrink-0" />
-          </button>
-
-          <button
-            onClick={() => handleNavClick('reverse-mortgage')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-emerald-900 text-white font-extrabold flex items-center justify-between"
-          >
-            <span>Reverse Mortgages (Starting at Age 55+)</span>
-            <ChevronRight className="w-4 h-4 text-emerald-300" />
-          </button>
-
-          <button
-            onClick={() => handleNavClick('calculator')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-slate-50 text-slate-800 font-semibold flex items-center justify-between"
-          >
-            <span className="flex items-center gap-2"><Calculator className="w-4 h-4 text-teal-700" /> Integrated Loan Calculator</span>
-            <ChevronRight className="w-4 h-4 text-slate-400" />
-          </button>
-
-          <button
-            onClick={() => handleNavClick('contact')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-slate-50 text-slate-800 font-semibold flex items-center justify-between"
-          >
-            <span className="flex items-center gap-2"><FileText className="w-4 h-4 text-teal-700" /> Streamlined Contact & Pre-Qual</span>
-            <ChevronRight className="w-4 h-4 text-slate-400" />
-          </button>
-
-          <button
-            onClick={() => handleNavClick('programs')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-slate-50 text-slate-800 font-semibold flex items-center justify-between"
-          >
-            <span>California Mortgage Programs</span>
-            <ChevronRight className="w-4 h-4 text-slate-400" />
-          </button>
-
-          <button
-            onClick={() => handleNavClick('county-limits')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-slate-50 text-slate-800 font-semibold flex items-center justify-between"
-          >
-            <span>CA County Conforming Limits</span>
-            <ChevronRight className="w-4 h-4 text-slate-400" />
-          </button>
-
-          <button
-            onClick={() => handleNavClick('ai-advisor')}
-            className="w-full text-left px-4 py-3 rounded-lg bg-slate-50 text-slate-800 font-semibold flex items-center justify-between"
-          >
-            <span>AI Mortgage Advisor</span>
-            <ChevronRight className="w-4 h-4 text-slate-400" />
-          </button>
-
-          <div className="pt-2 border-t border-slate-100 space-y-1 px-2 text-xs text-slate-700 font-medium">
-            <div className="font-extrabold text-teal-800">Speak to a Calif Advisor Marc Williamson</div>
-            <div>Direct Phone: <a href="tel:2099146037" className="text-teal-700 font-bold underline">209-914-6037 Direct</a></div>
-            <div>Email: <a href="mailto:marcwill@goldenstatehomeloan.com" className="text-teal-700 font-bold underline">marcwill@goldenstatehomeloan.com</a></div>
-            <div className="text-[10px] text-slate-500 pt-1">NMLS #1387796 | Powered by Omni-Fund, Inc NMLS# 4869 DRE License# 0143-0833</div>
+            <div className="flex items-center justify-center gap-3">
+              <a href="tel:2132943747" className="text-amber-200 font-semibold hover:underline">
+                Call Marc: (213) 294-3747
+              </a>
+              <span>·</span>
+              <span>NMLS #1387796</span>
+            </div>
           </div>
         </div>
       )}

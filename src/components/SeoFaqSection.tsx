@@ -1,74 +1,88 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, ShieldCheck, FileText, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, HelpCircle, FileCheck, Shield, Zap } from 'lucide-react';
 
 export const SeoFaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs = [
+  const FAQS = [
     {
-      q: "What is the 2026 conforming loan limit in California?",
-      a: "In 2026, the baseline conforming loan limit for 1-unit properties in standard California counties is $766,550. However, in designated high-cost counties (such as Los Angeles, Orange County, San Francisco, San Mateo, Santa Clara, Marin, and Alameda), the conforming limit extends up to $1,149,825. Loans exceeding these amounts qualify for Jumbo financing."
+      q: 'How does Golden State 3rd Party Loan Processing charge, and do I have any upfront costs?',
+      a: 'There are $0 upfront costs or monthly retainer subscriptions for brokers or originators. Our processing fee (Streamline $695, Standard $995, Preferred $1,195, or Elite $1,495) is disclosed on the Loan Estimate and Closing Disclosure, and is paid directly by the borrower through Title/Escrow at closing. If a loan file fails to close, you owe nothing.'
     },
     {
-      q: "How much down payment do I need to buy a home in California?",
-      a: "Down payment requirements vary by loan program: FHA loans require as little as 3.5% down, conventional loans start at 3% for first-time buyers, VA loans require 0% down for eligible military personnel, and Jumbo loans typically require 10% to 20% down. Down payment gift funds from family members are allowed across most programs."
+      q: 'Do I need to learn new software or invite borrowers into a separate portal?',
+      a: 'No. Golden State 3rd Party Loan Processing integrates directly into your existing Loan Origination System (Arive, LendingPad, Encompass, Calyx Point, or Byte). We work within your existing workflows, avoiding duplicate data entry or confusing new portals for your team and clients.'
     },
     {
-      q: "What credit score is needed for a California mortgage?",
-      a: "For conventional loans, standard qualification begins at a 620 credit score. For FHA loans, borrowers can qualify with credit scores as low as 580 (and 500-579 with 10% down). VA loans have flexible credit score requirements starting around 580. Higher credit scores (740+) unlock the lowest available interest rates."
+      q: 'Who is Marc Williamson, and what is his role in my pipeline?',
+      a: 'Marc Williamson (NMLS #1387796) is our Senior Director of Lending & Mortgage Processing with over 20 years of mortgage experience. Marc oversees file pipeline velocity, provides underwriting escalation assistance, and is reachable directly via call or text at (213) 294-3747.'
     },
     {
-      q: "Are there zero lender fee options available in California?",
-      a: "Yes! Golden State Home Loan offers transparent zero-junk-fee financing. On qualifying purchase and refinance loans, we waive standard processing and underwriting lender fees, keeping your total out-of-pocket closing costs as low as possible."
+      q: 'What types of specialized loan programs do you process besides Conventional?',
+      a: 'In addition to Conventional conforming and High-Balance, we specialize in complex Non-QM (12 & 24-month bank statements, P&L, 1099, asset depletion), DSCR investor rental portfolios, FHA/VA government files, Commercial bridge, and Jumbo financing up to $4M+.'
     },
     {
-      q: "How long does a California mortgage loan approval take?",
-      a: "While traditional banks often take 30 to 45 days, our streamlined California digital platform closes standard loans in as few as 14 to 21 calendar days from contract acceptance to funding."
+      q: 'How does your team communicate with our borrowers and Realtors?',
+      a: 'We act as a seamless extension of your brokerage. All emails and phone calls are conducted under your brand name or designated processing department. We provide milestone updates so you, your borrowers, and your real estate agents are never left in the dark.'
     },
     {
-      q: "Can I qualify for a home loan in California if I am self-employed?",
-      a: "Absolutely. We specialize in Bank Statement Non-QM loans designed for California entrepreneurs, business owners, 1099 contractors, and Realtors. We evaluate 12 to 24 months of bank deposits to verify income rather than relying strictly on tax returns."
+      q: 'Are your contract processors US-based?',
+      a: 'Yes. 100% of our contract processors are based in the United States, possessing extensive experience with wholesale lender portals, automated underwriting systems (DU & LPA), and state regulatory requirements across 28+ licensed states.'
+    },
+    {
+      q: 'Is third-party contract processing RESPA Section 8 compliant?',
+      a: 'Yes, fully compliant. The Consumer Financial Protection Bureau (CFPB) and RESPA guidelines permit third-party processing fees when actual, necessary processing services are performed by an independent processing entity and disclosed on the CD.'
     }
   ];
 
   return (
-    <section className="py-16 bg-slate-100 text-slate-900 border-t border-slate-200 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 border-b border-[#D4AF37]/35 relative">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-teal-100 border border-teal-200 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-teal-700" /> Frequently Asked Questions
+        <div className="text-center mb-12 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-sm bg-[#0A0D14] border border-[#D4AF37]/50 text-xs uppercase tracking-[0.25em] text-[#F5D77F] font-semibold shadow-md">
+            <span>◈</span>
+            <span>Frequently Asked Questions</span>
+            <span>◈</span>
           </div>
-          <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-            California Mortgage Guide & FAQs
+          <h2 className="font-cinzel text-3xl sm:text-4xl font-bold tracking-tight text-[#0A0D14]">
+            OPERATIONAL & COMPLIANCE <span className="gold-gradient-text">FAQS</span>
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm mt-1">
-            Essential answers about home financing, loan limits, rates, and qualifications in California.
+          <p className="text-sm text-slate-800 font-normal">
+            Everything you need to know about partnering with Golden State 3rd Party Loan Processing and Marc Williamson.
+          </p>
+          <p className="text-[11px] text-slate-600 font-medium">
+            Powered by 1 Touch Processing Arizona NMLS # 2337071
           </p>
         </div>
 
-        {/* Accordion List */}
+        {/* Accordions */}
         <div className="space-y-3">
-          {faqs.map((faq, idx) => {
+          {FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all shadow-sm"
+                className="art-deco-card rounded-sm border border-[#D4AF37]/25 overflow-hidden transition-all"
               >
                 <button
+                  type="button"
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-4 sm:p-5 flex items-center justify-between font-bold text-sm sm:text-base text-slate-900 hover:text-teal-700 transition-colors"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-[#131724] transition-colors"
                 >
-                  <span className="flex items-center gap-2">
-                    <span className="text-teal-700 font-extrabold">Q.</span>
-                    <span>{faq.q}</span>
+                  <span className="font-cinzel text-sm sm:text-base font-semibold text-white">
+                    {faq.q}
                   </span>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${isOpen ? 'rotate-180 text-teal-700' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 text-[#D4AF37] shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                  />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-fade-in">
+                  <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 font-light leading-relaxed border-t border-slate-800/80">
                     {faq.a}
                   </div>
                 )}
@@ -77,16 +91,6 @@ export const SeoFaqSection: React.FC = () => {
           })}
         </div>
 
-        {/* SEO Article Summary */}
-        <div className="mt-12 p-6 bg-white border border-slate-200 rounded-2xl space-y-3 text-xs text-slate-600 leading-relaxed shadow-sm">
-          <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-            <FileText className="w-4 h-4 text-teal-700" />
-            <span>Why Choose Golden State Home Loan as Your California Direct Mortgage Broker & Lender?</span>
-          </h3>
-          <p>
-            California real estate demands speed, competitive pricing, and deep local market expertise. Whether you are buying a primary home in Los Angeles, a luxury condo in Orange County, a tech professional property in Silicon Valley or San Francisco, or an investment home in Sacramento or San Diego, our team provides direct wholesale rates, transparent loan calculations, and personalized guidance across every county.
-          </p>
-        </div>
       </div>
     </section>
   );
