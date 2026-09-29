@@ -61,9 +61,9 @@ export const ProcessingPackages: React.FC<ProcessingPackagesProps> = ({
           </div>
         </div>
 
-        {/* Tab 1: 4 Package Cards */}
+        {/* Tab 1: 3 Package Cards */}
         {activeTab === 'cards' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {GOLDEN_STATE_PACKAGES.map((pkg) => {
               const isPopular = pkg.isPopular;
               return (
@@ -154,7 +154,6 @@ export const ProcessingPackages: React.FC<ProcessingPackagesProps> = ({
                   <th className="py-3 px-3 text-center">Streamline ($695)</th>
                   <th className="py-3 px-3 text-center">Standard ($995)</th>
                   <th className="py-3 px-3 text-center text-amber-200 font-bold bg-[#D4AF37]/10">Preferred ($1,195)</th>
-                  <th className="py-3 px-3 text-center">Elite LOA ($1,495)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800 text-slate-300">
@@ -163,49 +162,42 @@ export const ProcessingPackages: React.FC<ProcessingPackagesProps> = ({
                   <td className="py-3 px-3 text-center text-slate-600">—</td>
                   <td className="py-3 px-3 text-center text-slate-600">—</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37] font-bold bg-[#D4AF37]/5">✓ Yes</td>
-                  <td className="py-3 px-3 text-center text-[#D4AF37] font-bold">✓ Yes</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-medium text-white">Direct Borrower Document Collection</td>
                   <td className="py-3 px-3 text-center text-slate-600">—</td>
                   <td className="py-3 px-3 text-center text-slate-400">Basic</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37] font-bold bg-[#D4AF37]/5">✓ Full Chasing</td>
-                  <td className="py-3 px-3 text-center text-[#D4AF37] font-bold">✓ White Glove Concierge</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-medium text-white">All 3rd Party Orders (Appraisal, Title, VOE)</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37]">✓ Yes</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37]">✓ Yes</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37] font-bold bg-[#D4AF37]/5">✓ Yes</td>
-                  <td className="py-3 px-3 text-center text-[#D4AF37] font-bold">✓ Rush Priority</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-medium text-white">Complex Income Analysis (P&L, K-1s, 1099, Bank Statements)</td>
                   <td className="py-3 px-3 text-center text-slate-600">—</td>
                   <td className="py-3 px-3 text-center text-slate-600">—</td>
                   <td className="py-3 px-3 text-center text-slate-400 bg-[#D4AF37]/5">Standard DU/LPA</td>
-                  <td className="py-3 px-3 text-center text-[#D4AF37] font-bold">✓ Full LOA Calculation</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-medium text-white">Wholesale Underwriting Submission & Condition Clearing</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37]">✓ Yes</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37]">✓ Yes</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37] font-bold bg-[#D4AF37]/5">✓ Yes</td>
-                  <td className="py-3 px-3 text-center text-[#D4AF37] font-bold">✓ Underwriter Direct Calls</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-medium text-white">Closing Disclosure Balancing & Notary Coordination</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37]">✓ Yes</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37]">✓ Yes</td>
                   <td className="py-3 px-3 text-center text-[#D4AF37] font-bold bg-[#D4AF37]/5">✓ Yes</td>
-                  <td className="py-3 px-3 text-center text-[#D4AF37] font-bold">✓ Priority Expedited</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-medium text-white">Direct Access to Marc Williamson</td>
                   <td className="py-3 px-3 text-center text-slate-400">Standard Email</td>
                   <td className="py-3 px-3 text-center text-slate-400">Phone & Email</td>
                   <td className="py-3 px-3 text-center text-amber-200 bg-[#D4AF37]/5">Dedicated Pipeline Line</td>
-                  <td className="py-3 px-3 text-center text-[#D4AF37] font-bold">✓ Direct Cell & Weekend</td>
                 </tr>
               </tbody>
             </table>

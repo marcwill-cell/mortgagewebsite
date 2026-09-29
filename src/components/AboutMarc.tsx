@@ -48,7 +48,7 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
                 <div className="relative rounded-sm overflow-hidden border-2 border-[#D4AF37] bg-[#0A0D14] shadow-2xl">
                   <img
                     src={MARC_PHOTO_DATA_URI}
-                    alt="Marc Williamson - Senior Director & Mortgage Advisor"
+                    alt="Marc Williamson - Senior Loan Processor & Main Contact"
                     referrerPolicy="no-referrer"
                     className="w-full h-80 sm:h-96 object-cover object-top filter contrast-105"
                   />
@@ -59,7 +59,7 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
                       MARC WILLIAMSON
                     </span>
                     <span className="text-[11px] text-[#F5D77F] font-semibold uppercase tracking-widest block">
-                      Director of Lending & Processing
+                      Senior Loan Processor & Main Contact
                     </span>
                     <span className="text-[10px] text-slate-400 font-mono mt-0.5 block">
                       NMLS #1387796 · DRE #0143-0833

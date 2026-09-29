@@ -24,7 +24,7 @@
     radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.14) 0%, transparent 60%),
     radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
     url('/src/assets/images/art_deco_wallpaper_gold.svg');
-  background-size: 100% 100%, 100% 100%, 75px 75px;
+  background-size: 100% 100%, 100% 100%, 80px 120px;
   background-repeat: no-repeat, no-repeat, repeat;
 }
 

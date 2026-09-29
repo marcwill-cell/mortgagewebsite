@@ -130,12 +130,11 @@ export const LoanCalculator: React.FC<LoanCalculatorProps> = ({ onTransferToForm
                     <label className="block text-slate-300 text-xs font-medium mb-1.5">
                       Target Processing Package
                     </label>
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                       {[
                         { fee: 695, name: 'Streamline ($695)' },
                         { fee: 995, name: 'Standard ($995)' },
-                        { fee: 1195, name: 'Preferred ($1,195)' },
-                        { fee: 1495, name: 'Elite LOA ($1,495)' }
+                        { fee: 1195, name: 'Preferred ($1,195)' }
                       ].map(item => (
                         <button
                           key={item.fee}

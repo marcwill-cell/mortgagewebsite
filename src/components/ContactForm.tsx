@@ -289,7 +289,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledScenario }) =
                           <option value="Streamline ($695)">Streamline Refi ($695)</option>
                           <option value="Standard ($995)">Standard ($995)</option>
                           <option value="Preferred ($1,195)">Preferred - Most Popular ($1,195)</option>
-                          <option value="Elite LOA ($1,495)">Elite LOA + Processing ($1,495)</option>
                         </select>
                       </div>
                     </div>

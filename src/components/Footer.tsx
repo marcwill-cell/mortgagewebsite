@@ -124,7 +124,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenPreQual
             <div className="p-4 rounded-sm bg-[#0E121A] border border-[#D4AF37]/30 space-y-2">
               <div className="text-white font-semibold text-xs flex items-center justify-between">
                 <span>Marc Williamson</span>
-                <span className="text-[10px] text-[#F5D77F] uppercase tracking-wider">Senior Director</span>
+                <span className="text-[10px] text-[#F5D77F] uppercase tracking-wider">Senior Loan Processor</span>
               </div>
               <div className="text-slate-400 text-xs">
                 California License · Nationwide Processing Support

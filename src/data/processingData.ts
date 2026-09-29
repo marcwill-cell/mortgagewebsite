@@ -67,25 +67,6 @@ export const GOLDEN_STATE_PACKAGES: ProcessingPackage[] = [
       'CD balancing, closing document ordering & funding sign-off',
       '$0 upfront broker cost — added directly to Title CD'
     ]
-  },
-  {
-    id: 'elite',
-    name: 'Elite LOA + Processing',
-    price: 1495,
-    tagline: 'White-glove hybrid: dedicated Loan Officer Assistant + Senior Processor',
-    badge: 'Executive White Glove',
-    idealFor: 'Top producing loan officers and broker-owners scaling high volume without hiring in-house staff.',
-    turnaroundTime: '8 - 14 Business Days Priority',
-    features: [
-      'Prequalification assistance & TBD property submissions',
-      'Complex income calculation (Tax returns, Schedules C/E, K-1s, P&L)',
-      'Non-QM & Bank statement 12/24 mo cash-flow worksheet prep',
-      'Direct white-glove borrower document chasing & concierge calls',
-      'Initial disclosures, 3rd-party orders & priority underwriting rush',
-      'Direct underwriter condition conferences',
-      'Dedicated senior processor assigned exclusively to your branch',
-      'Weekend rush coverage & direct cell access to Marc Williamson'
-    ]
   }
 ];
 

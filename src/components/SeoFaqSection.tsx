@@ -7,7 +7,7 @@ export const SeoFaqSection: React.FC = () => {
   const FAQS = [
     {
       q: 'How does Golden State 3rd Party Loan Processing charge, and do I have any upfront costs?',
-      a: 'There are $0 upfront costs or monthly retainer subscriptions for brokers or originators. Our processing fee (Streamline $695, Standard $995, Preferred $1,195, or Elite $1,495) is disclosed on the Loan Estimate and Closing Disclosure, and is paid directly by the borrower through Title/Escrow at closing. If a loan file fails to close, you owe nothing.'
+      a: 'There are $0 upfront costs or monthly retainer subscriptions for brokers or originators. Our processing fee (Streamline $695, Standard $995, or Preferred $1,195) is disclosed on the Loan Estimate and Closing Disclosure, and is paid directly by the borrower through Title/Escrow at closing. If a loan file fails to close, you owe nothing.'
     },
     {
       q: 'Do I need to learn new software or invite borrowers into a separate portal?',
