@@ -15,7 +15,7 @@ export const SeoFaqSection: React.FC = () => {
     },
     {
       q: 'Who is Marc Williamson, and what is his role in my pipeline?',
-      a: 'Marc Williamson (NMLS #1387796) is our Senior Director of Lending & Mortgage Processing with over 20 years of mortgage experience. Marc oversees file pipeline velocity, provides underwriting escalation assistance, and is reachable directly via call or text at (213) 294-3747.'
+      a: 'Marc Williamson (NMLS #1387796) is our Senior Processor with over 20 years of mortgage experience. Marc oversees file pipeline velocity, provides underwriting escalation assistance, and is reachable directly via call or text at (213) 294-3747.'
     },
     {
       q: 'What types of specialized loan programs do you process besides Conventional?',

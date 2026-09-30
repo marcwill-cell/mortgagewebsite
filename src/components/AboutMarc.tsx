@@ -19,9 +19,14 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
             <span>Executive Leadership · Dedicated Broker Advocate</span>
             <span>◈</span>
           </div>
-          <h2 className="font-cinzel text-3xl sm:text-4xl font-bold tracking-tight text-[#0A0D14]">
-            MEET MARC WILLIAMSON <span className="gold-gradient-text">· SENIOR DIRECTOR</span>
-          </h2>
+          <div className="space-y-1">
+            <h2 className="font-cinzel text-3xl sm:text-4xl font-bold tracking-tight text-[#0A0D14]">
+              MEET MARC WILLIAMSON
+            </h2>
+            <div className="font-cinzel text-xl sm:text-2xl font-bold tracking-wider gold-gradient-text uppercase">
+              SENIOR PROCESSOR
+            </div>
+          </div>
           <p className="text-sm sm:text-base text-slate-800 font-normal">
             With over 20 years of mortgage lending and contract processing leadership, Marc Williamson serves as your direct operations partner, scaling brokerages and originators nationwide.
           </p>
