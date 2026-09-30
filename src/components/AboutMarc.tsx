@@ -89,14 +89,11 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
                 <div className="text-[10px] text-slate-400 font-normal mb-1">
                   Powered by 1 Touch Processing Arizona NMLS # 2337071
                 </div>
-                <h3 className="font-cinzel text-2xl sm:text-3xl font-bold text-white">
-                  &ldquo;We Treat Every Loan As If It Were Our Own.&rdquo;
+                <h3 className="font-cinzel text-xl sm:text-2xl md:text-3xl font-bold text-white leading-snug">
+                  &ldquo;I approach every loan with meticulous, personal attention so your borrowers will come back to you again and again!&rdquo;
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-light mt-3 leading-relaxed">
-                  Marc Williamson leads Golden State 3rd Party Loan Processing's specialized processing division. Whether you are an independent mortgage broker, top-producing branch manager, or direct retail lender, Marc provides high-touch operational expertise that clears underwriting bottlenecks before they occur.
-                </p>
-                <p className="text-xs sm:text-sm text-slate-300 font-light mt-2 leading-relaxed">
-                  Specializing in complex 12/24-month bank statement Non-QM files, DSCR investor rental schedules, Conventional conforming, and Jumbo luxury financing, Marc guarantees total transparency, zero junk fees, and relentless speed.
+                  Marc Williamson is Golden State 3rd Party Loan Processing's specialized Senior Processor. Whether you are an independent mortgage broker, top-producing branch manager, or direct retail lender, Marc provides high-touch operational expertise that clears underwriting bottlenecks before they occur.
                 </p>
               </div>
 
