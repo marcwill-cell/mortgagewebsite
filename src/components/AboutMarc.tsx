@@ -66,8 +66,8 @@ export const AboutMarc: React.FC<AboutMarcProps> = ({ onOpenPreQual }) => {
                     <span className="text-[11px] text-[#F5D77F] font-semibold uppercase tracking-widest block">
                       Senior Loan Processor & Main Contact
                     </span>
-                    <span className="text-[10px] text-slate-400 font-mono mt-0.5 block">
-                      NMLS #1387796 · DRE #0143-0833
+                    <span className="text-[10px] text-slate-300 font-mono mt-0.5 block">
+                      NMLS #1387796 · 20+ Yrs Lending & Processing · Monterey, California
                     </span>
                   </div>
                 </div>

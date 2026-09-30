@@ -107,7 +107,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <span className="gold-gradient-text">ZERO OVERHEAD.</span>
               </h1>
               <p className="text-base sm:text-lg text-slate-900 font-bold max-w-2xl leading-relaxed">
-                The premier third-party contract processing engine for mortgage brokers, loan officers, and wholesale lenders. Golden State 3rd Party Loan Processing integrates directly into your LOS—<strong className="text-[#8C650A] font-extrabold">Arive, LendingPad, Encompass</strong>—delivering faster condition clearing, zero fixed payroll, and flawless closings.
+                Based out of Monterey, CA I am a premier third-party contract processing engine for mortgage brokers, loan officers, and wholesale lenders. I integrate directly into your LOS—<strong className="text-[#8C650A] font-extrabold">Arive, LendingPad, Encompass</strong>—delivering faster condition clearing, zero fixed payroll, and flawless closings!
               </p>
               <p className="text-sm sm:text-base font-bold text-[#0A0D14] max-w-2xl leading-relaxed p-3.5 rounded-sm bg-gradient-to-r from-[#D4AF37]/25 via-[#D4AF37]/10 to-transparent border-l-4 border-[#B8860B] shadow-sm">
                 TITLE/ESCROW PAYS MY 3rd PARTY PROCESSING FEE YOU DO NOT HAVE TO DEAL WITH PAYROLL OR ACCOUNTING OF ANY KIND! <span className="text-[#B8860B] font-black mx-1.5 inline-block">◈</span> 3rd processing fees are billed directly to the borrower through Title/Escrow on the Closing Disclosure (CD) in Section B! <span className="text-[#B8860B] font-black mx-1.5 inline-block">◈</span> You never pay out of pocket! <span className="text-[#B8860B] font-black mx-1.5 inline-block">◈</span> I am only paid when the loan closes!
@@ -125,16 +125,11 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="space-y-4 text-xs sm:text-sm text-slate-200">
                 {/* Heading */}
                 <h3 className="font-cinzel text-sm sm:text-base md:text-[17px] font-bold tracking-wide text-[#F5D77F] leading-snug pb-3 border-b border-[#D4AF37]/35">
-                  Why going with a smaller boutique 3rd party processor versus a gargantuan processing firm is better for you as a loan officer/broker:
+                  <span className="text-[#D4AF37] mr-1.5">◈ ◈ ◈</span>
+                  Why going with a smaller boutique 3rd party processor, versus a gargantuan processing firm, is better for you as a loan officer/broker:
+                  <span className="text-[#D4AF37] ml-1.5">◈ ◈ ◈</span>
                 </h3>
 
-                {/* Point 1 */}
-                <div className="flex items-start gap-2.5">
-                  <span className="text-[#D4AF37] font-bold text-sm mt-0.5">◈</span>
-                  <p className="font-bold text-amber-200 leading-relaxed">
-                    Based out of Monterey, California, I work through a smaller elite processing company called 1 Touch Processing out of Arizona:
-                  </p>
-                </div>
 
                 {/* Point 2 */}
                 <div className="flex items-start gap-2.5">
@@ -147,12 +142,12 @@ export const Hero: React.FC<HeroProps> = ({
                 {/* Points 3, 4 & 5 lined up neatly in indented block */}
                 <div className="space-y-2.5 pl-5 sm:pl-6 border-l-2 border-[#D4AF37]/40 ml-1.5">
                   <div className="p-3.5 rounded-sm bg-black/45 border border-slate-700/60 text-slate-300 leading-relaxed">
-                    <span className="text-white font-semibold">Processors make only about 45% of the commission with large processing companies.</span> This means they have to carry a monster pipeline of 15-20 files to make a decent living. That means it can be tough for the processor to pick up the phone and keep up. Work life balance is non-existent.
+                    <span className="text-white font-semibold">Processors make only about 45% of the commission with large processing companies.</span> This means they have to carry a monster pipeline of 15-20 files to make a decent living. That makes it tough for the processor to pick up the phone for you, the borrower, or the lender. Work life balance is pretty thin.
                   </div>
 
                   <div className="p-3.5 rounded-sm bg-emerald-950/30 border border-emerald-500/40 text-slate-100 leading-relaxed">
                     <p className="text-[#F5D77F] font-bold text-sm sm:text-base mb-1.5">
-                      I cap my pipeline to 7-8 loans a month for a far better work life balance!
+                      I cap my pipeline to 7-8 loans a month for better quality file focus for you and a better work life balance for me! (Go team!)
                     </p>
                     <p className="text-emerald-200 font-semibold text-xs sm:text-sm">
                       (Making the majority of the commission makes a huge difference with availability for the LO, Borrowers, and Lenders!)
@@ -240,10 +235,13 @@ export const Hero: React.FC<HeroProps> = ({
                 <h2 className="font-cinzel text-2xl font-bold tracking-tight text-white">
                   MARC WILLIAMSON
                 </h2>
-                <div className="text-xs text-slate-300 font-medium flex items-center justify-center gap-2">
+                <div className="text-xs text-slate-300 font-medium flex items-center justify-center gap-1.5">
                   <span>NMLS #1387796</span>
                   <span className="text-[#D4AF37]">·</span>
                   <span>20+ Yrs Lending & Processing</span>
+                </div>
+                <div className="text-xs text-slate-300 font-medium">
+                  Monterey, California
                 </div>
                 <div className="text-[11px] text-amber-200/90 font-medium">
                   Golden State 3rd Party Loan Processing
