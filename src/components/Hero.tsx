@@ -149,8 +149,11 @@ export const Hero: React.FC<HeroProps> = ({
                     <p className="text-[#F5D77F] font-bold text-sm sm:text-base mb-1.5">
                       I cap my pipeline to 7-8 loans a month for better quality file focus for you and a better work life balance for me! (Go team!)
                     </p>
-                    <p className="text-emerald-200 font-semibold text-xs sm:text-sm">
+                    <p className="text-emerald-200 font-semibold text-xs sm:text-sm mb-2">
                       (Making the majority of the commission makes a huge difference with availability for the LO, Borrowers, and Lenders!)
+                    </p>
+                    <p className="text-amber-200 font-bold text-xs sm:text-sm pt-2 border-t border-emerald-500/30">
+                      If rates drop and production increases I have fellow processors who jump in to help! Keeping your pipeline moving is TOP priority!
                     </p>
                   </div>
                 </div>
