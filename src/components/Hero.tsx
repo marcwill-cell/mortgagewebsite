@@ -115,40 +115,48 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Why going with a smaller boutique 3rd party processor versus a gargantuan processing firm */}
-            <div className="relative p-5 sm:p-6 rounded-sm bg-gradient-to-br from-[#121622]/95 via-[#0D1017]/95 to-[#161C2A]/95 border-2 border-[#D4AF37]/60 shadow-2xl my-3 max-w-2xl text-left">
+            <div className="relative p-5 sm:p-6 rounded-sm bg-gradient-to-br from-[#121622]/95 via-[#0D1017]/95 to-[#161C2A]/95 border-2 border-[#D4AF37]/60 shadow-2xl my-4 max-w-2xl text-left">
               {/* Stepped Art Deco Corners */}
               <div className="absolute top-1.5 left-1.5 w-3 h-3 border-t-2 border-l-2 border-[#D4AF37]" />
               <div className="absolute top-1.5 right-1.5 w-3 h-3 border-t-2 border-r-2 border-[#D4AF37]" />
               <div className="absolute bottom-1.5 left-1.5 w-3 h-3 border-b-2 border-l-2 border-[#D4AF37]" />
               <div className="absolute bottom-1.5 right-1.5 w-3 h-3 border-b-2 border-r-2 border-[#D4AF37]" />
 
-              <div className="border-b border-[#D4AF37]/30 pb-2.5 mb-3.5">
-                <h3 className="font-cinzel text-sm sm:text-base font-bold tracking-wide text-[#F5D77F] leading-snug">
+              <div className="space-y-4 text-xs sm:text-sm text-slate-200">
+                {/* Heading */}
+                <h3 className="font-cinzel text-sm sm:text-base md:text-[17px] font-bold tracking-wide text-[#F5D77F] leading-snug pb-3 border-b border-[#D4AF37]/35">
                   Why going with a smaller boutique 3rd party processor versus a gargantuan processing firm is better for you as a loan officer/broker:
                 </h3>
-              </div>
 
-              <div className="space-y-3 text-xs sm:text-sm text-slate-200">
-                <p className="text-amber-200 font-semibold leading-relaxed">
-                  Based out of Monterey, California, I work through a smaller elite processing company called 1 Touch Processing out of Arizona:
-                </p>
+                {/* Point 1 */}
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#D4AF37] font-bold text-sm mt-0.5">◈</span>
+                  <p className="font-bold text-amber-200 leading-relaxed">
+                    Based out of Monterey, California, I work through a smaller elite processing company called 1 Touch Processing out of Arizona:
+                  </p>
+                </div>
 
-                <p className="text-slate-300 font-semibold leading-relaxed">
-                  The benefits to you of working with a smaller elite processing company versus working with a large gargantuan processing company:
-                </p>
+                {/* Point 2 */}
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#D4AF37] font-bold text-sm mt-0.5">◈</span>
+                  <p className="font-bold text-white leading-relaxed">
+                    The benefits to you of working with a smaller elite processing company versus working with a large gargantuan processing company:
+                  </p>
+                </div>
 
-                <div className="space-y-2.5 pt-1">
-                  <div className="p-3 rounded-sm bg-[#0E121A] border border-slate-700/60 leading-relaxed text-slate-300">
+                {/* Points 3, 4 & 5 lined up neatly in indented block */}
+                <div className="space-y-2.5 pl-5 sm:pl-6 border-l-2 border-[#D4AF37]/40 ml-1.5">
+                  <div className="p-3.5 rounded-sm bg-black/45 border border-slate-700/60 text-slate-300 leading-relaxed">
                     <span className="text-white font-semibold">Processors make only about 45% of the commission with large processing companies.</span> This means they have to carry a monster pipeline of 15-20 files to make a decent living. That means it can be tough for the processor to pick up the phone and keep up. Work life balance is non-existent.
                   </div>
 
-                  <div className="p-3 rounded-sm bg-[#091510] border border-emerald-500/50 leading-relaxed text-slate-100">
-                    <strong className="text-[#F5D77F] font-bold text-sm block mb-1">
+                  <div className="p-3.5 rounded-sm bg-emerald-950/30 border border-emerald-500/40 text-slate-100 leading-relaxed">
+                    <p className="text-[#F5D77F] font-bold text-sm sm:text-base mb-1.5">
                       I cap my pipeline to 7-8 loans a month for a far better work life balance!
-                    </strong>
-                    <span className="text-emerald-200 font-medium">
+                    </p>
+                    <p className="text-emerald-200 font-semibold text-xs sm:text-sm">
                       (Making the majority of the commission makes a huge difference with availability for the LO, Borrowers, and Lenders!)
-                    </span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -289,38 +297,38 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
 
               {/* ◈ The Processor Commitment · Direct From Marc Williamson ◈ */}
-              <div className="mt-4 p-4 rounded-sm bg-[#0A0D15] border border-[#D4AF37]/50 text-left relative shadow-lg">
-                <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#F5D77F] border-b border-[#D4AF37]/30 pb-2 mb-3 text-center">
+              <div className="mt-4 p-4 sm:p-5 rounded-sm bg-[#0A0D15] border border-[#D4AF37]/50 text-left relative shadow-lg">
+                <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#F5D77F] border-b border-[#D4AF37]/30 pb-2.5 mb-3.5 text-center">
                   <span className="text-[#D4AF37]">◈</span>
                   <span>The Processor Commitment · Direct From Marc Williamson</span>
                   <span className="text-[#D4AF37]">◈</span>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-slate-200">
+                <ul className="space-y-3 text-[13px] sm:text-sm text-slate-100">
                   <li className="flex items-start gap-2.5">
-                    <div className="p-1 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
-                      <Zap className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    <div className="p-1.5 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
+                      <Zap className="w-4 h-4 text-[#D4AF37]" />
                     </div>
-                    <span className="leading-snug">
-                      <strong className="text-white">I provide &ldquo;Johnny on the Spot Responses&rdquo;</strong> to your calls, texts, and emails as your Processor.
+                    <span className="leading-relaxed">
+                      <strong className="text-white font-bold">I provide &ldquo;Johnny on the Spot Responses&rdquo;</strong> to your calls, texts, and emails as your Processor.
                     </span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
-                    <div className="p-1 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
-                      <Shield className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    <div className="p-1.5 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
+                      <Shield className="w-4 h-4 text-[#D4AF37]" />
                     </div>
-                    <span className="leading-snug">
-                      <strong className="text-white">I am paid out of Section B</strong> on your closing disclosures. <span className="text-amber-200 font-medium">(Not out of your commission unless you choose to)</span>
+                    <span className="leading-relaxed">
+                      <strong className="text-white font-bold">I am paid out of Section B</strong> on your closing disclosures. <span className="text-amber-200 font-semibold">(Not out of your commission unless you choose to)</span>
                     </span>
                   </li>
 
                   <li className="flex items-start gap-2.5">
-                    <div className="p-1 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    <div className="p-1.5 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
                     </div>
-                    <span className="leading-snug">
-                      <strong className="text-white">All work is here in the USA.</strong> <span className="text-slate-300">(I don&apos;t farm any of it out overseas in any way as some large processing firms have.)</span>
+                    <span className="leading-relaxed">
+                      <strong className="text-white font-bold">All work is here in the USA.</strong> <span className="text-slate-300 font-normal">(I don&apos;t farm any of it out overseas in any way as some large processing firms have.)</span>
                     </span>
                   </li>
                 </ul>
