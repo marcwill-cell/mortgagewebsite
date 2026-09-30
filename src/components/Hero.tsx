@@ -38,6 +38,11 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="text-sm sm:text-base md:text-lg font-bold text-amber-300 tracking-wider">
               Powered by 1 Touch Processing Arizona NMLS # 2337071
             </div>
+            <div className="text-xs sm:text-sm md:text-base font-bold text-amber-100 tracking-wide flex items-center justify-center gap-2 flex-wrap">
+              <span className="text-[#D4AF37]">◈ ◈ ◈</span>
+              <span>Already approved with C2 and Barrett Financial and most all big lenders!</span>
+              <span className="text-[#D4AF37]">◈ ◈ ◈</span>
+            </div>
           </div>
 
           {/* List of States in Bold - Large Size Easier to Read */}
@@ -101,8 +106,11 @@ export const Hero: React.FC<HeroProps> = ({
                 CLOSE MORE LOANS. <br />
                 <span className="gold-gradient-text">ZERO OVERHEAD.</span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-800 font-normal max-w-2xl leading-relaxed">
-                The premier third-party contract processing engine for mortgage brokers, loan officers, and wholesale lenders. Golden State 3rd Party Loan Processing integrates directly into your LOS—<strong className="text-[#8C650A] font-semibold">Arive, LendingPad, Encompass</strong>—delivering faster condition clearing, zero fixed payroll, and flawless closings.
+              <p className="text-base sm:text-lg text-slate-900 font-bold max-w-2xl leading-relaxed">
+                The premier third-party contract processing engine for mortgage brokers, loan officers, and wholesale lenders. Golden State 3rd Party Loan Processing integrates directly into your LOS—<strong className="text-[#8C650A] font-extrabold">Arive, LendingPad, Encompass</strong>—delivering faster condition clearing, zero fixed payroll, and flawless closings.
+              </p>
+              <p className="text-sm sm:text-base font-bold text-[#0A0D14] max-w-2xl leading-relaxed p-3.5 rounded-sm bg-gradient-to-r from-[#D4AF37]/25 via-[#D4AF37]/10 to-transparent border-l-4 border-[#B8860B] shadow-sm">
+                TITLE/ESCROW PAYS MY 3rd PARTY PROCESSING FEE YOU DO NOT HAVE TO DEAL WITH PAYROLL OR ACCOUNTING OF ANY KIND! <span className="text-[#B8860B] font-black mx-1.5 inline-block">◈</span> 3rd processing fees are billed directly to the borrower through Title/Escrow on the Closing Disclosure (CD) in Section B! <span className="text-[#B8860B] font-black mx-1.5 inline-block">◈</span> You never pay out of pocket! <span className="text-[#B8860B] font-black mx-1.5 inline-block">◈</span> I am only paid when the loan closes!
               </p>
             </div>
 
@@ -234,6 +242,11 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 <div className="text-[9px] text-slate-400">
                   Powered by 1 Touch Processing Arizona NMLS # 2337071
+                </div>
+                <div className="text-[10px] text-amber-200/90 font-medium pt-0.5 flex items-center justify-center gap-1.5 flex-wrap">
+                  <span className="text-[#D4AF37]">◈ ◈ ◈</span>
+                  <span>Already approved with C2 and Barrett Financial and most all big lenders!</span>
+                  <span className="text-[#D4AF37]">◈ ◈ ◈</span>
                 </div>
                 <p className="text-xs text-slate-400 italic pt-1 max-w-xs mx-auto">
                   &ldquo;I personally ensure your loan files are scrubbed, submitted, and cleared to close with unprecedented speed.&rdquo;
