@@ -40,49 +40,59 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
             <div className="text-xs sm:text-sm md:text-base font-bold text-amber-100 tracking-wide flex items-center justify-center gap-2 flex-wrap">
               <span className="text-[#D4AF37]">◈ ◈ ◈</span>
-              <span>Already approved with C2 and Barrett Financial and most all big lenders!</span>
+              <span>Approved with most all big lenders like UWM, Pennymac, Rocket and many more!</span>
+              <span className="text-[#D4AF37]">◈ ◈ ◈</span>
+            </div>
+            <div className="text-xs sm:text-sm md:text-base font-bold text-amber-200 tracking-wide flex items-center justify-center gap-2 flex-wrap">
+              <span className="text-[#D4AF37]">◈ ◈ ◈</span>
+              <span>Let me handle your UWM closing! No more playing coordinator between Escrow and UWM!</span>
+              <span className="text-[#D4AF37]">◈ ◈ ◈</span>
+            </div>
+            <div className="text-xs sm:text-sm md:text-base font-bold text-amber-100 tracking-wide flex items-center justify-center gap-2 flex-wrap">
+              <span className="text-[#D4AF37]">◈ ◈ ◈</span>
+              <span>Already approved with C2 / Barrett Financial and many other brokers!</span>
               <span className="text-[#D4AF37]">◈ ◈ ◈</span>
             </div>
           </div>
 
-          {/* List of States in Bold - Large Size Easier to Read */}
-          <div className="pt-5 border-t border-[#D4AF37]/40">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3.5 text-left font-mono">
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">AZ:</strong> Mortgage Broker License #: MB-1037930</span>
+          {/* List of States in Bold - Compact Size */}
+          <div className="pt-3.5 border-t border-[#D4AF37]/35">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2.5 text-left font-mono">
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">AZ:</strong> Mortgage Broker License #: MB-1037930</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">CA:</strong> LICENSE #: CA-DBO1289441</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">CA:</strong> LICENSE #: CA-DBO1289441</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">CO:</strong> LICENSE #: 100535928</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">CO:</strong> LICENSE #: 100535928</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">FL:</strong> License #: LO113558 | FL License #: LO114744</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">FL:</strong> License #: LO113558 | FL License #: LO114744</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">IL:</strong> License #: EEP.0000049</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">IL:</strong> License #: EEP.0000049</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">MI:</strong> License # 2337071</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">MI:</strong> License # 2337071</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">OK:</strong> License #: MB016515</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">OK:</strong> License #: MB016515</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">PA:</strong> PA License #: 112928</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">PA:</strong> PA License #: 112928</span>
               </div>
-              <div className="text-white font-bold text-sm sm:text-base md:text-[17px] flex items-start gap-2 p-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-sm">
-                <span className="text-[#D4AF37] text-xl font-black leading-none mt-0.5">•</span>
-                <span><strong className="text-[#F5D77F] text-base sm:text-lg tracking-wide">TX:</strong> TX SML Licensed</span>
+              <div className="text-white font-semibold text-xs sm:text-sm flex items-center gap-1.5 p-1.5 px-2.5 rounded bg-black/50 border border-[#D4AF37]/30 shadow-xs">
+                <span className="text-[#D4AF37] text-sm font-bold">•</span>
+                <span><strong className="text-[#F5D77F] tracking-wide">TX:</strong> TX SML Licensed</span>
               </div>
             </div>
           </div>
@@ -251,11 +261,6 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 <div className="text-[9px] text-slate-400">
                   Powered by 1 Touch Processing Arizona NMLS # 2337071
-                </div>
-                <div className="text-[10px] text-amber-200/90 font-medium pt-0.5 flex items-center justify-center gap-1.5 flex-wrap">
-                  <span className="text-[#D4AF37]">◈ ◈ ◈</span>
-                  <span>Already approved with C2 and Barrett Financial and most all big lenders!</span>
-                  <span className="text-[#D4AF37]">◈ ◈ ◈</span>
                 </div>
                 <p className="text-xs text-slate-400 italic pt-1 max-w-xs mx-auto">
                   &ldquo;I personally ensure your loan files are scrubbed, submitted, and cleared to close with unprecedented speed.&rdquo;
